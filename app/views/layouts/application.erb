@@ -1,0 +1,32 @@
+<head>
+  <%=stylesheet_link_tag 'style'%>
+</head>
+
+<body>
+<div id='header'>
+  <div class='content'>
+    <div class='user_bar'>
+      <% if logged_in? %>
+        logged in as <%=link_to current_user.login, home_path%> (<%=link_to 'logout', logout_path%>)
+      <%else%>
+        <%=link_to 'login', login_path%> | <%=link_to 'signup', signup_path%>
+      <%end%>
+    </div>
+    <br class='clear'>
+    <a href='/'>
+    <div id='logo'>
+    </div>
+    </a>
+    
+    <div class='header_link_container'>
+    <%=link_to 'Whats For Dinner', '#', :class => 'header_link'%>
+    <%=link_to 'Recipes', '#', :class => 'header_link'%>
+    <%=link_to 'Contribute', '#', :class => 'header_link'%>
+    </div>
+  </div>
+</div>
+
+<div id='content'>
+  <%=yield%>
+</div>
+</body>
