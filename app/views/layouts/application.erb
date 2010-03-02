@@ -1,20 +1,17 @@
 <head>
   <%=stylesheet_link_tag 'style'%>
+  <%= yield :head %>
 </head>
 
 <body>
 <div id='header'>
   <div class='content'>
-    <div class='user_bar'>
-      <% if logged_in? %>
-        logged in as <%=link_to current_user.login, home_path%> (<%=link_to 'logout', logout_path%>)
-      <%else%>
-        <%=link_to 'login', login_path%> | <%=link_to 'signup', signup_path%>
-      <%end%>
-    </div>
+    <%= render :partial=> 'users/user_bar'%>
     <br class='clear'>
     <a href='/'>
+    <div id='logo_box'>
     <div id='logo'>
+    </div>
     </div>
     </a>
     
@@ -25,8 +22,8 @@
     </div>
   </div>
 </div>
-
-<div id='content'>
+<br class='clear'>
+<div id='main_content' class='content'>
   <%=yield%>
 </div>
 </body>
