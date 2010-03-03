@@ -1,0 +1,12 @@
+class CreateRecipeComments < ActiveRecord::Migration
+  def self.up
+    create_table :recipe_comments do |t|
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :recipe_comments
+  end
+end
