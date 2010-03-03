@@ -9,7 +9,71 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100202203757) do
+ActiveRecord::Schema.define(:version => 20100303023839) do
+
+  create_table "ingredient_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ingredients", :force => true do |t|
+    t.string   "name"
+    t.integer  "ingredient_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipe_comments", :force => true do |t|
+    t.integer  "recipe_id"
+    t.integer  "user_id"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipe_ingredients", :force => true do |t|
+    t.integer  "recipe_id"
+    t.integer  "ingredient_id"
+    t.float    "qty"
+    t.string   "unit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipe_instructions", :force => true do |t|
+    t.integer  "recipe_id"
+    t.integer  "step_num"
+    t.text     "instruction_text"
+    t.string   "instruction_photo_path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipe_ratings", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipes", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "recipe_photo_path"
+    t.boolean  "approved"
+    t.text     "overview"
+    t.float    "prep_time"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_ingredients", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "ingredient_id"
+    t.float    "qty"
+    t.string   "unit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40
