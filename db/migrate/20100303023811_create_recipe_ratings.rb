@@ -1,9 +1,9 @@
 class CreateRecipeRatings < ActiveRecord::Migration
   def self.up
     create_table :recipe_ratings do |t|
-      t.int :recipe_id
-      t.int :user_id
-      t.int :rating
+      t.integer :recipe_id
+      t.integer :user_id
+      t.integer :rating
       t.timestamps
     end
   end
