@@ -1,2 +1,0 @@
-class RecipeInstruction < ActiveRecord::Base
-end
