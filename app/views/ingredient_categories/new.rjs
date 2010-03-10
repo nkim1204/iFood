@@ -1,0 +1,1 @@
+page['addCategory'].replace :partial => 'ingredient_categories/new'

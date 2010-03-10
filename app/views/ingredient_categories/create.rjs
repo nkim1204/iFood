@@ -1,0 +1,2 @@
+page.insert_html :bottom, :items_list, :partial => 'ingredient_category'
+page['addCategory'].hide

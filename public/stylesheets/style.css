@@ -73,3 +73,33 @@ body {
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px;
 }
+
+/*SECTIONS FOR LIST*/
+ul{
+	list-style-type: none;
+}
+
+.section{
+	width:300px;
+	text-align:left;
+	float:left;
+}
+
+.last{
+	float:right;
+	text-align:right;
+}
+
+li{
+	height:20px;
+	clear:both;
+	border-bottom:1px dotted grey;
+}
+
+a.highlightable{
+	text-decoration:none;
+}
+
+.highlightable:hover{
+	background-color:lightyellow;
+}

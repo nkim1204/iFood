@@ -1,0 +1,2 @@
+id = dom_id(@ingredient_category)
+page[id].blind_up

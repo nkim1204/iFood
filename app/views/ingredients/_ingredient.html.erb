@@ -1,0 +1,6 @@
+<a href='/ingredients/<%=ingredient.id%>' class='highlightable'>
+  <li id=<%=dom_id(ingredient)%> class='highlightable'>
+    <div class='section'>Name: <%=ingredient.name%></div>
+    <div class='last'><%=link_to_remote 'X', :url =>{:action => 'destroy', :id => ingredient.id}%></div>
+  </li>
+</a>

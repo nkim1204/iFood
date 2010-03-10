@@ -1,0 +1,7 @@
+<div id="addCategory">
+<%form_remote_for :ingredient_category, :url=> {:action=>'create'} do |f|%>
+  <%=f.label :name%>
+  <%=f.text_field :name%>
+  <%=f.submit 'Submit'%>
+<%end%>
+</div>

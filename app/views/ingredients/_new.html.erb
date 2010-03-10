@@ -1,0 +1,8 @@
+<div id="addIngredient">
+<%form_remote_for :ingredient, :url=> {:controller=>'ingredients', :action=>'create'} do |f|%>
+  <%=f.label :name%>
+  <%=f.text_field :name%>
+  <%=hidden_field_tag 'ingredient[ingredient_category_id]', @ingredient_category.id if @ingredient_category%>
+  <%=f.submit 'Submit'%>
+<%end%>
+</div>

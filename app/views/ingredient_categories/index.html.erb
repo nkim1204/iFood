@@ -1,0 +1,8 @@
+<ul id='items_list'>
+  <%=render :partial => 'ingredient_category', :collection => @ingredient_categories%>
+</ul>
+
+<%=link_to_remote 'Add Category', :url => {:action => 'new'}%>
+<div id='addCategory'>
+  
+</div>

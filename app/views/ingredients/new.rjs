@@ -1,0 +1,2 @@
+#logger.debug @ingredient_category.inspect
+page['addIngredient'].replace :partial => 'ingredients/new'

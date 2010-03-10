@@ -5,7 +5,10 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   map.home '/users/home', :controller => 'users', :action => 'home'
+  map.delete_category 'ingredient_categories/destroy/:id', :controller=> 'ingredient_categories', :action => 'destroy'
   map.resources :users
+  map.resources :ingredient_categories
+  map.resources :ingredients
 
   map.resource :session
 

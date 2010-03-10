@@ -1,0 +1,10 @@
+<h2><%=@ingredient_category.name%></h2>
+
+<ul id='items_list'>
+  <%=render :partial => 'ingredients/ingredient', :collection => @ingredients%>
+</ul>
+
+<%=link_to_remote 'Add Ingredient', :url => {:controller=>'ingredients', :action => 'new', :id => @ingredient_category.id}%>
+<div id='addIngredient'>
+  
+</div>
