@@ -10,7 +10,10 @@
 <% end -%> -->
 
 <div class='user_bar'>
-  <% if logged_in? %>
+  <% if logged_in?%>
+    <% if current_user.is_admin? %>
+      <%=link_to 'Manage Site', :controller => :admin, :action => :index %>
+    <% end %>
     logged in as <%=link_to current_user.login, home_path%> (<%=link_to 'logout', logout_path%>)
   <%else%>
     <%=link_to 'login', login_path%> | <%=link_to 'signup', signup_path%>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100303023839) do
+ActiveRecord::Schema.define(:version => 20100311024922) do
 
   create_table "ingredient_categories", :force => true do |t|
     t.string   "name"
@@ -51,6 +51,9 @@ ActiveRecord::Schema.define(:version => 20100303023839) do
   end
 
   create_table "recipe_ratings", :force => true do |t|
+    t.integer  "recipe_id"
+    t.integer  "user_id"
+    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -87,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20100303023839) do
     t.datetime "remember_token_expires_at"
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
+    t.boolean  "is_admin",                                 :default => false
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
