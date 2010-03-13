@@ -59,7 +59,30 @@ Pasta Salad:
     id: 7
     user_id: 1
     approved: true
-    overview: This is something I threw together one day. Prepare the veggies while the pasta cooks and you're done in 10 minutes. I use different kinds of tomatoes, depending on what I have on hand. Cherry or grape tomatoes are easy to just throw in - no cutting required.
+    overview: This is something I threw together one day. Prepare the veggies while the pasta cooks and you are done in 10 minutes. I use different kinds of tomatoes, depending on what I have on hand. Cherry or grape tomatoes are easy to just throw in - no cutting required.
     prep_time: 10 
     title: Pasta Salad
 
+Wilted Spinach:
+    id: 8
+    user_id: 1
+    approved: true
+    overview: Delicious wilted spinach with a simple Mediterranean dressing.
+    prep_time: 15 
+    title: Wilted Spinach
+
+Green Slime Smoothie:
+    id: 9
+    user_id: 1
+    approved: true
+    overview: This is yummy. With a name like this, your kids will love it.
+    prep_time: 5 
+    title: Green Slime Smoothie
+
+Green Smoothie:
+    id: 10
+    user_id: 1
+    approved: true
+    overview: A great way to get your kids to eat greens! You will be amazed by this yummy fruity smoothie. Experiment with different amounts or types of fruit and make your own.
+    prep_time: 10 
+    title: Green Smoothie

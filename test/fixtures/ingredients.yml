@@ -174,32 +174,32 @@ baking powder:
 white sugar:
     id: 34
     name: white sugar
-    ingredient_category_id: 10
+    ingredient_category_id: 9
 
 brown sugar:
     id: 35
     name: brown sugar
-    ingredient_category_id: 10
+    ingredient_category_id: 9
 
 tomatoes:
     id: 36
     name: canned tomatoes
-    ingredient_category_id: 11
+    ingredient_category_id: 10
 
 chicken soup:
     id: 37
     name: chicken soup
-    ingredient_category_id: 11
+    ingredient_category_id: 10
 
 cream of mushroom soup:
     id: 38
     name: cream of mushroom soup
-    ingredient_category_id: 11
+    ingredient_category_id: 10
 
 peas:
     id: 39
     name: canned peas
-    ingredient_category_id: 11
+    ingredient_category_id: 10
 
 french dressing:
     id: 40
@@ -240,3 +240,51 @@ tomato:
     id: 47
     name: tomato
     ingredient_category_id: 2
+
+pine nuts:
+    id: 48
+    name: pine nuts
+    ingredient_category_id: 11
+
+almonds:
+    id: 49
+    name: almonds
+    ingredient_category_id: 11
+
+walnuts:
+    id: 50
+    name: walnuts 
+    ingredient_category_id: 11
+
+lemon juice:
+    id: 51
+    name: lemon juice
+    ingredient_category_id: 8
+
+
+strawberries:
+    id: 52
+    name: strawberries
+    ingredient_category_id: 5
+    
+honey:
+    id: 53
+    name: honey
+    ingredient_category_id: 6
+    
+ice:
+    id: 54
+    name: ice
+    ingredient_category_id: 8
+    
+grapes:
+    id: 55
+    name: grapes
+    ingredient_category_id: 5
+
+vanilla yogurt:
+    id: 56
+    name: vanilla yogurt
+    ingredient_category_id: 4
+
+    

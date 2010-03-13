@@ -192,3 +192,99 @@ ps dressing:
     qty: 0.5
     unit: cup
 
+wspinach oil:
+    recipe_id: 8
+    ingredient_id: 28 
+    qty: 0.25
+    unit: cup
+
+wspinach vinegar:
+    recipe_id: 8
+    ingredient_id: 23  
+    qty: 2
+    unit: tablespoons
+
+wspinach lemon:
+    recipe_id: 8
+    ingredient_id: 51  
+    qty: 1
+    unit: teaspoon
+
+wspinach garlic:
+    recipe_id: 8
+    ingredient_id: 8 
+    qty: 1
+    unit: tablespoon
+
+wspinach spinach:
+    recipe_id: 8
+    ingredient_id: 7 
+    qty: 4
+    unit: ounces
+
+wspinach pine nuts:
+    recipe_id: 8
+    ingredient_id: 48  
+    qty: 1.5
+    unit: tablespoons
+
+smoothie spinach:
+    recipe_id: 9
+    ingredient_id: 7  
+    qty: 2
+    unit: cups
+
+smoothie strawberries:
+    recipe_id: 9
+    ingredient_id: 52   
+    qty: 2
+    unit: cups
+
+smoothie banana:
+    recipe_id: 9
+    ingredient_id: 18  
+    qty: 1
+    unit: whole
+
+smoothie honey:
+    recipe_id: 9
+    ingredient_id: 53   
+    qty: 2
+    unit: tablespoons
+
+smoothie ice:
+    recipe_id: 9
+    ingredient_id: 54  
+    qty: 0.5
+    unit: cups
+
+gsmoothie banana:
+    recipe_id: 10
+    ingredient_id: 18  
+    qty: 1
+    unit: whole
+
+gsmoothie grapes:
+    recipe_id: 10
+    ingredient_id: 55  
+    qty: 1
+    unit: cup
+
+gsmoothie yogurt:
+    recipe_id: 10
+    ingredient_id: 56  
+    qty: 1
+    unit: 6 ounce tub
+
+gsmoothie apple:
+    recipe_id: 10
+    ingredient_id: 17  
+    qty: 1
+    unit: whole
+
+gsmoothie spinach:
+    recipe_id: 10
+    ingredient_id: 7   
+    qty: 1.5
+    unit: cups
+

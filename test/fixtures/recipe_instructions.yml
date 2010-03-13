@@ -90,3 +90,33 @@ psalad 2:
     recipe_id: 7
     step_num: 2
     instruction_text: In a bowl, gently toss together pasta, avocado, tomato and dressing. Chill until ready to serve.  
+
+wspinach 1:
+    recipe_id: 8
+    step_num: 1
+    instruction_text: In a bowl, mix the olive oil, vinegar, lemon juice, minced garlic, salt, and pepper. 
+
+wspinach 2:
+    recipe_id: 8
+    step_num: 2
+    instruction_text: Place the spinach over boiling water in a pot fitted with a steamer basket, and steam 2 to 3 minutes, until wilted but not soggy.
+
+wspinach 3:
+    recipe_id: 8
+    step_num: 3 
+    instruction_text: Toss spinach in a bowl with the dressing, and sprinkle with pine nuts to serve. 
+
+smoothie 1:
+    recipe_id: 9
+    step_num: 1 
+    instruction_text: Place the spinach in the freezer until frozen, at least 1 hour. 
+
+smoothie 2:
+    recipe_id: 9
+    step_num: 2
+    instruction_text: Combine the spinach, strawberries, banana, honey, and ice in a blender. Blend until smooth. Serve immediately.
+
+gsmoothie 1:
+    recipe_id: 10
+    step_num: 1 
+    instruction_text: Place the banana, grapes, yogurt, apple and spinach into a blender. Cover, and blend until smooth, stopping frequently to push down anything stuck to the sides. Pour into glasses and serve.  
