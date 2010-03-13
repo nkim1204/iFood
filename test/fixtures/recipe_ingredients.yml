@@ -5,3 +5,190 @@
 #
 # two:
 #   column: value
+
+chicken soup:
+    recipe_id: 1
+    ingredient_id: 37
+    qty: 3
+    unit: 10.75 ounce can
+
+cream of mushroom:
+    recipe_id: 1
+    ingredient_id: 38
+    qty: 3
+    unit: 10.75 ounce can
+
+water:
+    recipe_id: 1
+    ingredient_id: 30
+    qty: 2
+    unit: cups
+
+peas:
+    recipe_id: 1
+    ingredient_id: 39
+    qty: 1
+    unit: 15 ounce can
+
+king chicken:
+    recipe_id: 1
+    ingredient_id: 2
+    qty: 1
+    unit: pound
+
+easy chicken:
+    recipe_id: 2
+    ingredient_id: 2
+    qty: 4
+    unit: breast halves
+
+dressing:
+    recipe_id: 2
+    ingredient_id: 40
+    qty: 1
+    unit: cup
+
+cornflakes:
+    recipe_id: 2
+    ingredient_id: 41
+    qty: 1.5
+    unit: cups
+
+crema chicken:
+    recipe_id: 3
+    ingredient_id: 2
+    qty: 4
+    unit: breast halves
+
+crema butter:
+    recipe_id: 3 
+    ingredient_id: 13
+    qty: 2
+    unit: tablespoons
+
+crema flour:
+    recipe_id: 3 
+    ingredient_id: 31
+    qty: 2
+    unit: tablespoons
+
+crema broth:
+    recipe_id: 3
+    ingredient_id: 42 
+    qty: 1
+    unit: cup
+
+crema cream:
+    recipe_id: 3
+    ingredient_id: 43 
+    qty: 1
+    unit: cup
+
+crema ketchup:
+    recipe_id: 3 
+    ingredient_id: 21
+    qty: 2
+    unit: tablespoons
+
+crema tortillas:
+    recipe_id: 3
+    ingredient_id: 44 
+    qty: 6
+    unit: 6 inch
+
+crema rice:
+    recipe_id: 3
+    ingredient_id: 24 
+    qty: 1
+    unit: cup
+
+italian chicken:
+    recipe_id: 4
+    ingredient_id: 2
+    qty: 4
+    unit: breast halves
+
+italian dressing:
+    recipe_id: 4
+    ingredient_id: 45
+    qty: 1
+    unit: 16 ounce bottle
+
+italian oil:
+    recipe_id: 4
+    ingredient_id: 28 
+    qty: 0.33
+    unit: cup
+ 
+pasta chicken:
+    recipe_id: 5
+    ingredient_id: 2 
+    qty: 4
+    unit: breast halves
+ 
+pasta mushroom:
+    recipe_id: 5
+    ingredient_id: 38 
+    qty: 1
+    unit: 10.75 ounce can
+ 
+pasta water:
+    recipe_id: 5
+    ingredient_id: 30  
+    qty: 2.25
+    unit: cups
+ 
+pasta:
+    recipe_id: 5
+    ingredient_id: 27 
+    qty: 2
+    unit: cups
+
+psalad pasta:
+    recipe_id: 6
+    ingredient_id: 27 
+    qty: 1
+    unit: pound
+
+psalad broccoli:
+    recipe_id: 6
+    ingredient_id: 6
+    qty: 1
+    unit: head
+
+psalad red pepper:
+    recipe_id: 6
+    ingredient_id: 46 
+    qty: 1
+    unit: whole
+
+psalad cheese:
+    recipe_id: 6
+    ingredient_id: 16 
+    qty: 0.25
+    unit: cup
+
+ps pasta:
+    recipe_id: 7
+    ingredient_id: 27 
+    qty: 1
+    unit: pound
+
+ps avacado:
+    recipe_id: 7
+    ingredient_id: 19
+    qty: 1
+    unit: whole
+
+ps tomato:
+    recipe_id: 7
+    ingredient_id: 47
+    qty: 1
+    unit: whole
+
+ps dressing:
+    recipe_id: 7
+    ingredient_id: 45 
+    qty: 0.5
+    unit: cup
+

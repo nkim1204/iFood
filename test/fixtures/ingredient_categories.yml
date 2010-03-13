@@ -5,3 +5,48 @@
 #
 # two:
 #   column: value
+
+meat:
+    id: 1
+    name: meat
+
+vegetable:
+    id: 2
+    name: vegetable
+
+spice:
+    id: 3
+    name: spice
+
+dairy:
+    id: 4
+    name: dairy
+
+fruit:
+    id: 5
+    name: fruit
+
+condiments:
+    id: 6
+    name: condiments
+
+starches:
+    id: 7
+    name: starches
+
+liquids:
+    id: 8
+    name: liquids
+
+powders:
+    id: 9 
+    name: powders
+
+baking:
+    id: 10
+    name: baking
+
+canned:
+    id: 11
+    name: canned
+

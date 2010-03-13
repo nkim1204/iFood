@@ -5,3 +5,88 @@
 #
 # two:
 #   column: value
+
+chicken 1:
+    recipe_id: 1
+    step_num: 1
+    instruction_text: Dice the cooked boneless chicken breast halves.
+
+chicken 2:
+    recipe_id: 1
+    step_num: 2
+    instruction_text: Combine cream of chicken soup, cream of mushroom soup and water in a large pot or saucepan over medium low heat
+
+chicken 3:
+    recipe_id: 1
+    step_num: 3
+    instruction_text: Add chicken and cook, stirring, until heated through. Stir in peas, heat through, and serve (optionally over toast).
+
+chicken 4:
+    recipe_id: 2
+    step_num: 1
+    instruction_text: Preheat oven to 350 degrees F (175 degrees C). 
+
+chicken 5:
+    recipe_id: 2
+    step_num: 2
+    instruction_text: Place the dressing in a shallow dish or bowl for dipping. Crush the cornflakes and do the same with them. 
+
+chicken 6:
+    recipe_id: 2
+    step_num: 3
+    instruction_text: Dip the chicken breasts, one at a time, in the dressing, then in the breadcrumbs to coat. Place chicken in a lightly greased 9x13 inch baking dish and bake in the preheated oven for 25 to 30 minutes. 
+
+chicken 7:
+    recipe_id: 3
+    step_num: 1
+    instruction_text: Cook rice according to package instructions. Cut skinless, boneless chicken breast halves into cubes.
+
+chicken 8:
+    recipe_id: 3
+    step_num: 2
+    instruction_text: In a large skillet over medium heat, melt butter. Add chicken and cook, stirring frequently until juices run clear. Stir in the flour and ketchup, then whisk in the broth. When sauce begins to thicken, reduce heat and stir in the cream. Simmer covered for about 15 minutes, stirring occasionally.  
+
+chicken 9:
+    recipe_id: 3
+    step_num: 3
+    instruction_text: Spoon the mixture into flour or corn tortillas and serve with rice.
+
+chicken 11:
+    recipe_id: 4
+    step_num: 1 
+    instruction_text: To marinate place chicken in a nonporous glass dish or bowl. Poke several holes in breasts with a fork; season with salt and pepper to taste and cover with salad dressing. Toss to coat, cover dish and refrigerate to marinate for 2 hours. 
+
+chicken 12:
+    recipe_id: 4
+    step_num: 2
+    instruction_text: Heat oil in a medium skillet over medium heat. Remove chicken from marinade (discarding of any remaining marinade) and saute in skillet for 4 to 5 minutes on each side, or until cooked through and juices run clear. 
+
+chicken 13:
+    recipe_id: 5
+    step_num: 1 
+    instruction_text: In a large skillet, brown the chicken in oil over medium low heat until cooked through and juices run clear. Remove chicken from skillet and set aside. Add the soup and water. Heat to a boil. 
+
+chicken 14:
+    recipe_id: 5
+    step_num: 2
+    instruction_text: Add uncooked pasta to soup mixture in skillet (the pasta cooks right in the soup!). Stir all together and cook over medium heat for 10 minutes, stirring often. Add cooked chicken and cook another 5 minutes or until pasta is done, stirring often. 
+
+chicken 15:
+    recipe_id: 6
+    step_num: 1 
+    instruction_text: Bring a large pot of lightly salted water to a boil. Add pasta and cook for 8 minutes. Add broccoli and cook 2 minutes more. Drain pasta and broccoli and rinse with cold water until cool. 
+
+chicken 16:
+    recipe_id: 6
+    step_num: 2 
+    instruction_text: In large bowl, combine pasta, broccoli, red bell pepper, parmesan, salt and pepper. Toss, adjust seasoning and serve. 
+
+psalad 1:
+    recipe_id: 7
+    step_num: 1
+    instruction_text: Bring a large pot of lightly salted water to a boil. Add pasta and cook for 8 to 10 minutes, until al dente. Drain, and rinse under cold running water to cool. 
+
+psalad 2:
+    recipe_id: 7
+    step_num: 2
+    instruction_text: In a bowl, gently toss together pasta, avocado, tomato and dressing. Chill until ready to serve.  

@@ -5,3 +5,238 @@
 #
 # two:
 #   column: value
+
+beef:
+    id: 1
+    name: beef
+    ingredient_category_id: 1
+
+chicken:
+    id: 2
+    name: chicken
+    ingredient_category_id: 1
+
+pork:
+    id: 3
+    name: pork
+    ingredient_category_id: 1
+
+potato:
+    id: 4
+    name: potato
+    ingredient_category_id: 2
+
+onion:
+    id: 5
+    name: onion
+    ingredient_category_id: 2
+
+broccoli:
+    id: 6
+    name: broccoli
+    ingredient_category_id: 2
+
+spinach:
+    id: 7
+    name: spinach
+    ingredient_category_id: 2
+
+garlic:
+    id: 8 
+    name: garlic
+    ingredient_category_id: 3
+
+salt:
+    id: 9  
+    name: salt
+    ingredient_category_id: 3
+
+pepper:
+    id: 10 
+    name: pepper
+    ingredient_category_id: 3
+
+basil:
+    id: 11 
+    name: basil
+    ingredient_category_id: 3
+
+oregano:
+    id: 12
+    name: oregano
+    ingredient_category_id: 3
+
+butter:
+    id: 13 
+    name: butter
+    ingredient_category_id: 4
+
+milk:
+    id: 14 
+    name: milk
+    ingredient_category_id: 4
+
+eggs:
+    id: 15 
+    name: eggs
+    ingredient_category_id: 4
+
+parmesan cheese:
+    id: 16
+    name: parmesan cheese
+    ingredient_category_id: 4
+
+apple:
+    id: 17
+    name: apple
+    ingredient_category_id: 5
+
+banana:
+    id: 18
+    name: banana
+    ingredient_category_id: 5
+
+avacado:
+    id: 19
+    name: avacado
+    ingredient_category_id: 5
+
+lemon:
+    id: 20 
+    name: lemon 
+    ingredient_category_id: 5
+
+ketchup:
+    id: 21
+    name: ketchup
+    ingredient_category_id: 6
+
+mustard:
+    id: 22
+    name: mustard
+    ingredient_category_id: 6
+
+balsamic vinegar:
+    id: 23
+    name: balsamic vinegar
+    ingredient_category_id: 6
+
+white rice:
+    id: 24
+    name: white rice
+    ingredient_category_id: 7
+
+brown rice:
+    id: 25
+    name: brown rice
+    ingredient_category_id: 7
+
+quinoa:
+    id: 26
+    name: quinoa
+    ingredient_category_id: 7
+
+pasta:
+    id: 27
+    name:  pasta
+    ingredient_category_id: 7
+
+olive:
+    id: 28
+    name: olive oil
+    ingredient_category_id: 8
+
+canola:
+    id: 29
+    name: canola oil 
+    ingredient_category_id: 8
+
+water:
+    id: 30
+    name: water
+    ingredient_category_id: 8
+ 
+flour:
+    id: 31
+    name: flour 
+    ingredient_category_id: 9
+ 
+baking soda:
+    id: 32
+    name: baking soda
+    ingredient_category_id: 9
+ 
+baking powder:
+    id: 33
+    name: baking powder
+    ingredient_category_id: 9
+
+white sugar:
+    id: 34
+    name: white sugar
+    ingredient_category_id: 10
+
+brown sugar:
+    id: 35
+    name: brown sugar
+    ingredient_category_id: 10
+
+tomatoes:
+    id: 36
+    name: canned tomatoes
+    ingredient_category_id: 11
+
+chicken soup:
+    id: 37
+    name: chicken soup
+    ingredient_category_id: 11
+
+cream of mushroom soup:
+    id: 38
+    name: cream of mushroom soup
+    ingredient_category_id: 11
+
+peas:
+    id: 39
+    name: canned peas
+    ingredient_category_id: 11
+
+french dressing:
+    id: 40
+    name: french dressing
+    ingredient_category_id: 8
+
+cornflakes:
+    id: 41
+    name: cornflakes
+    ingredient_category_id: 7
+
+chicken broth:
+    id: 42
+    name: chicken broth
+    ingredient_category_id: 8 
+
+cream:
+    id: 43
+    name: heavy cream 
+    ingredient_category_id: 4 
+
+tortillas:
+    id: 44
+    name: tortillas
+    ingredient_category_id: 7 
+
+italian dressing:
+    id: 45
+    name: italian dressing
+    ingredient_category_id: 8
+
+red pepper:
+    id: 46
+    name: red pepper
+    ingredient_category_id: 2
+
+tomato:
+    id: 47
+    name: tomato
+    ingredient_category_id: 2
