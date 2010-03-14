@@ -1,0 +1,32 @@
+<h1>Listing user_ingredients</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>User</th>
+    <th>Ingredient</th>
+    <th>Qty</th>
+    <th>Unit</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+  </tr>
+
+<% @user_ingredients.each do |user_ingredient| %>
+  <tr>
+    <td><%=h user_ingredient.id %></td>
+    <td><%=h user_ingredient.user_id %></td>
+    <td><%=h user_ingredient.ingredient_id %></td>
+    <td><%=h user_ingredient.qty %></td>
+    <td><%=h user_ingredient.unit %></td>
+    <td><%=h user_ingredient.created_at %></td>
+    <td><%=h user_ingredient.updated_at %></td>
+    <td><%= link_to 'Show', user_ingredient %></td>
+    <td><%= link_to 'Edit', edit_user_ingredient_path(user_ingredient) %></td>
+    <td><%= link_to 'Destroy', user_ingredient, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New user_ingredient', new_user_ingredient_path %>

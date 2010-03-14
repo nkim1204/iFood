@@ -1,0 +1,38 @@
+<p>
+  <b>Id:</b>
+  <%=h @user_ingredient.id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @user_ingredient.user_id %>
+</p>
+
+<p>
+  <b>Ingredient:</b>
+  <%=h @user_ingredient.ingredient_id %>
+</p>
+
+<p>
+  <b>Qty:</b>
+  <%=h @user_ingredient.qty %>
+</p>
+
+<p>
+  <b>Unit:</b>
+  <%=h @user_ingredient.unit %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @user_ingredient.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%=h @user_ingredient.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_ingredient_path(@user_ingredient) %> |
+<%= link_to 'Back', user_ingredients_path %>
