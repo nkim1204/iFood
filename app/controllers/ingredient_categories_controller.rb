@@ -9,13 +9,7 @@ class IngredientCategoriesController < ApplicationController
   
   def create
     @ingredient_category = IngredientCategory.new(params[:ingredient_category])
-    respond_to do |format|
-      if @ingredient_category.save
-        format.js
-      else
-        render :action => 'new'
-      end
-    end
+    @ingredient_category.save    
   end
   
   def destroy
@@ -29,5 +23,15 @@ class IngredientCategoriesController < ApplicationController
   def show
     @ingredient_category = IngredientCategory.find(params[:id])
     @ingredients = @ingredient_category.ingredients
+  end
+  
+  def edit
+    @ingredient_category = IngredientCategory.find(params[:id])
+  end
+  
+  def update
+    @ingredient_category = IngredientCategory.find(params[:id])
+    @ingredient_category.update_attributes(params[:ingredient_category])
+    @ingredient_category.save
   end
 end

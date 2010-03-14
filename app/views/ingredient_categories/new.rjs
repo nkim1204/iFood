@@ -1,1 +1,7 @@
-page['addCategory'].replace :partial => 'ingredient_categories/new'
+if params[:cancel]
+  page['addCategory'].blind_up
+else
+  page['edit_category'].hide
+  page['addCategory'].replace_html :partial => 'ingredient_categories/new'
+  page['addCategory'].blind_down
+end

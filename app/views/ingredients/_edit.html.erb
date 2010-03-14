@@ -1,0 +1,16 @@
+<div class='slide_down'>
+  <h3 class='float-l'>Editing Ingredient: <%=@ingredient.name%></h3>
+  <%=link_to_remote 'Cancel', :url => {:controller => 'ingredients', :action => 'edit', :id => @ingredient.id, :cancel => 'true'}, :html => {:class => 'float-r'}%>
+  <br class='clear'>
+  
+<%if @ingredient%>      
+    <%form_remote_for @ingredient, :url => {:controller => 'ingredients', :action => 'update'} do |f|%>
+      <%=f.error_messages%>
+      <%=f.label :name%>
+      <%=f.text_field :name%><br />
+      <hr>
+      <%=f.submit 'Update'%>
+      <%=link_to_remote 'close', :url => {:controller => 'ingredients', :action => 'edit', :id => @ingredient.id, :cancel => 'true'}%>
+    <%end%>
+<%end%>
+</div>

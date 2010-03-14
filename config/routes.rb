@@ -6,6 +6,10 @@ ActionController::Routing::Routes.draw do |map|
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   map.home '/users/home', :controller => 'users', :action => 'home'
   map.delete_category 'ingredient_categories/destroy/:id', :controller=> 'ingredient_categories', :action => 'destroy'
+  map.edit_category 'ingredient_categories/edit/:id', :controller=> 'ingredient_categories', :action => 'edit'
+  map.edit_ingredient 'ingredients/edit/:id', :controller=> 'ingredients', :action => 'edit'
+  map.delete_ingredient 'ingredients/destroy/:id', :controller => 'ingredients', :action => 'destroy'
+
   map.resources :users
   map.resources :ingredient_categories
   map.resources :ingredients

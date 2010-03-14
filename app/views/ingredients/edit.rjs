@@ -1,0 +1,7 @@
+unless params[:cancel]
+  page['addIngredient'].hide
+  page['edit_ingredient'].replace_html :partial=>'ingredients/edit'
+  page['edit_ingredient'].blind_down
+else
+  page['edit_ingredient'].blind_up
+end

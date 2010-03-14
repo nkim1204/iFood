@@ -1,8 +1,11 @@
-<ul id='items_list'>
+<%=link_to_remote 'Add Category', :url => {:action => 'new'}, :html=>{:class=>'float-r'}%>
+<br class='clear'>
+<div id='edit_category' style='display:none'></div>
+<div id='addCategory' style='display:none'></div>
+<hr>
+
+<ul id='items_list' class='ajax_list'>
   <%=render :partial => 'ingredient_category', :collection => @ingredient_categories%>
 </ul>
 
-<%=link_to_remote 'Add Category', :url => {:action => 'new'}%>
-<div id='addCategory'>
-  
-</div>
+

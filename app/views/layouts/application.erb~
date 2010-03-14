@@ -20,7 +20,7 @@
     <%=link_to 'Whats For Dinner', '#', :class => 'header_link'%>
     <%=link_to 'Recipes', '#', :class => 'header_link'%>
     <%=link_to 'Contribute', '#', :class => 'header_link'%>
-    <% if current_user.is_admin? %>
+    <% if current_user.is_admin %>
     	<%=link_to 'Manage Site', :controller => :admin, :action => :index, :class => 'header_link' %>
     <% end %>
     </div>
