@@ -1,10 +1,10 @@
-<h2><%=@ingredient_category.name%></h2>
-
-<ul id='items_list'>
+<h2 class='float-l'><%=@ingredient_category.name%></h2>
+<%=link_to_remote 'Add Ingredient', :url =>{:controller=>'ingredients', :action => 'new', :id => @ingredient_category.id}, :html=>{:class=>'float-r'}%>
+<br class='clear'>
+<div id='addIngredient' style='display:none'></div>
+<div id='edit_ingredient' style='display:none'></div>
+<hr>
+<ul id='items_list' class='ajax_list'>
   <%=render :partial => 'ingredients/ingredient', :collection => @ingredients%>
 </ul>
 
-<%=link_to_remote 'Add Ingredient', :url => {:controller=>'ingredients', :action => 'new', :id => @ingredient_category.id}%>
-<div id='addIngredient'>
-  
-</div>

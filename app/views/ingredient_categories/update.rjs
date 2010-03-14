@@ -1,0 +1,8 @@
+id = dom_id(@ingredient_category)
+if @ingredient_category.errors.blank?
+  page[id].replace :partial => 'ingredient_category', :collection => [@ingredient_category]
+  page['edit_category'].blind_up
+  page.visual_effect :highlight, id, :duration => 3
+else
+  page['edit_category'].replace_html :partial => 'edit'
+end

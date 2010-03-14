@@ -75,12 +75,15 @@ body {
 }
 
 /*SECTIONS FOR LIST*/
-ul{
+ul.ajax_list{
 	list-style-type: none;
+	list-style-position: none;
+	margin:0;
+	padding:0;
 }
 
 .section{
-	width:300px;
+	width:250px;
 	text-align:left;
 	float:left;
 }
@@ -90,16 +93,50 @@ ul{
 	text-align:right;
 }
 
-li{
-	height:20px;
+li.highlightable{
+	height:25px;
+	padding-top:5px;
 	clear:both;
 	border-bottom:1px dotted grey;
+	width:100%;
 }
 
-a.highlightable{
+li.highlightable a{
 	text-decoration:none;
 }
 
 .highlightable:hover{
 	background-color:lightyellow;
+}
+
+.slide_down{
+	border: 4px solid darkblue;
+	background-color: lightgrey;
+	padding:10px 5px 0 5px;
+}
+
+.float-r{
+	float:right;
+}
+
+.float-l{
+	float:left;
+}
+
+.slide_down h3{
+	margin:0 4px 10px 0;
+	color:darkblue;
+}
+
+.slide_down label{
+	color:darkblue;
+}
+
+.errorExplanation{
+	background-color:lightsalmon;
+	border:5px solid red;
+}
+
+.fieldWithErrors input{
+	background-color:lightsalmon;
 }

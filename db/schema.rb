@@ -51,9 +51,6 @@ ActiveRecord::Schema.define(:version => 20100311024922) do
   end
 
   create_table "recipe_ratings", :force => true do |t|
-    t.integer  "recipe_id"
-    t.integer  "user_id"
-    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

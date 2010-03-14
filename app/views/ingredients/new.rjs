@@ -1,2 +1,7 @@
-#logger.debug @ingredient_category.inspect
-page['addIngredient'].replace :partial => 'ingredients/new'
+if params[:cancel]
+  page['addIngredient'].blind_up
+else
+  page['edit_ingredient'].hide
+  page['addIngredient'].replace_html :partial => 'ingredients/new'
+  page['addIngredient'].blind_down
+end

@@ -5,14 +5,9 @@ class IngredientsController < ApplicationController
   end
   
   def create
+    @ingredient_category = IngredientCategory.find(params[:ingredient][:ingredient_category_id])
     @ingredient = Ingredient.new(params[:ingredient])
-    respond_to do |format|
-      if @ingredient.save
-        format.js
-      else
-        render :action => 'new'
-      end
-    end
+    @ingredient.save
   end
   
   def new
@@ -26,5 +21,15 @@ class IngredientsController < ApplicationController
       flash[:error] = "Error Deleting Ingredient"
       redirect_to :action => 'index'
     end
+  end
+  
+  def edit
+    @ingredient = Ingredient.find(params[:id])
+  end
+  
+  def update
+    @ingredient = Ingredient.find(params[:id])
+    @ingredient.update_attributes(params[:ingredient])
+    @ingredient.save
   end
 end

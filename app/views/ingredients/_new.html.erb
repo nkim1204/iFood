@@ -1,8 +1,16 @@
-<div id="addIngredient">
-<%form_remote_for :ingredient, :url=> {:controller=>'ingredients', :action=>'create'} do |f|%>
+<div class='slide_down'>
+  <h3 class='float-l'>Add A New Ingredient</h3>
+  <%=link_to_remote 'Cancel', :url => {:controller =>'ingredients', :action => 'new', :id => @ingredient_category.id, :cancel => 'true'}, :html => {:class => 'float-r'}%>
+  <br class='clear'>
+<%form_remote_for @ingredient, :url=> {:controller=>'ingredients', :action=>'create'} do |f|%>
+  <%=f.error_messages%>
   <%=f.label :name%>
   <%=f.text_field :name%>
-  <%=hidden_field_tag 'ingredient[ingredient_category_id]', @ingredient_category.id if @ingredient_category%>
+  <%=hidden_field_tag 'ingredient[ingredient_category_id]', @ingredient_category.id if @ingredient_category%> <br />
+  <hr>
   <%=f.submit 'Submit'%>
+  <%=link_to_remote 'close', :url => {:controller =>'ingredients', :action => 'new', :id => @ingredient_category.id, :cancel => 'true'}%>
 <%end%>
+
+
 </div>

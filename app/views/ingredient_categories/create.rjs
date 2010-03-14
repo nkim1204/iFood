@@ -1,2 +1,6 @@
-page.insert_html :bottom, :items_list, :partial => 'ingredient_category'
-page['addCategory'].hide
+if @ingredient_category.errors.blank?
+  page.insert_html :bottom, :items_list, :partial => 'ingredient_category'
+  page['addCategory'].hide
+else
+  page['addCategory'].replace_html :partial => 'ingredient_categories/new'
+end
