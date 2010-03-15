@@ -1,8 +1,8 @@
-<a href='/ingredient_categories/<%=ingredient_category.id%>' class='highlightable'>
+
   <li id=<%=dom_id(ingredient_category)%> class='highlightable'>
+    <a href='/ingredient_categories/<%=ingredient_category.id%>' class='highlightable'>
     <div class='section'>Name: <%=ingredient_category.name%></div>
     <div class='section'>Size: <%=ingredient_category.ingredients.size%></div>
     <div class='section'><%=link_to_remote 'edit', :url => edit_category_path(ingredient_category.id)%></div>
     <div class='last'><%=link_to_remote 'X', :url =>{:action => 'destroy', :id => ingredient_category.id}%></div>
   </li>
-</a>

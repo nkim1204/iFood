@@ -140,3 +140,9 @@ li.highlightable a{
 .fieldWithErrors input{
 	background-color:lightsalmon;
 }
+
+#flash_error{
+	background-color:lightsalmon;
+	width:100%;
+	height:25px;
+}

@@ -1,0 +1,16 @@
+## COLORBOX - ON RAILS ##
+
+Written by Nicholas Young @ ArtistOne, Nashville, TN
+
+A view helper that integrates Jack Moore's Colorbox (http://colorpowered.com/colorbox/) with your Rails application.
+
+## USING COLORBOX ON RAILS ##
+
+1)	Include jQuery (v1.3+) in your application.html.erb if you haven't already.
+
+2)	Insert the following code in your application.html.erb's header portion: <%= include_colorbox_assets %>
+
+3)	Insert links as such: <%= link_to_colorbox 'Link Text', link_path %>
+	Remember, the link_to_colorbox function also accepts the standard link_to arguments as well. ;)
+	
+4)	Enjoy your new lightboxed content!

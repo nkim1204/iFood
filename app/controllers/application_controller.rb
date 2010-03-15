@@ -6,6 +6,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   include AuthenticatedSystem
   
+  def admin_required
+    unless logged_in? && current_user.is_admin?
+      flash[:error] = 'You Must be an admin to perform this action'
+      redirect_to '/'
+    end
+  end
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 end

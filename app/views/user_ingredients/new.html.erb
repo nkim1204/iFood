@@ -3,13 +3,11 @@
 <% form_for(@user_ingredient) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
-  </p>
+
   <p>
     <%= f.label :user_id %><br />
     <%= f.text_field :user_id %>
+
   </p>
   <p>
     <%= f.label :ingredient_id %><br />
@@ -23,14 +21,7 @@
     <%= f.label :unit %><br />
     <%= f.text_field :unit %>
   </p>
-  <p>
-    <%= f.label :created_at %><br />
-    <%= f.datetime_select :created_at %>
-  </p>
-  <p>
-    <%= f.label :updated_at %><br />
-    <%= f.datetime_select :updated_at %>
-  </p>
+
   <p>
     <%= f.submit 'Create' %>
   </p>

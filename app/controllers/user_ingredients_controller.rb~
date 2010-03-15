@@ -25,7 +25,7 @@ class UserIngredientsController < ApplicationController
   # GET /user_ingredients/new.xml
   def new
     @user_ingredient = UserIngredient.new
-    @ingredient_categories = IngredientCategory.find(:all)
+    @ingredients = Ingredient.find(:all)
     render :partial => 'new'
   end
 

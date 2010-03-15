@@ -1,4 +1,5 @@
 class IngredientCategoriesController < ApplicationController
+  before_filter :admin_required
   def index
     @ingredient_categories = IngredientCategory.find(:all)
   end

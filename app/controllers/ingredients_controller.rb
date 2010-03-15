@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-  
+  before_filter :admin_required, :except => [:show]
   def show
     @ingredient = Ingredient.find(params[:id])
   end
