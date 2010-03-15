@@ -70,6 +70,22 @@ class User < ActiveRecord::Base
   def email=(value)
     write_attribute :email, (value ? value.downcase : nil)
   end
+  
+  def create_reset_code
+      @reset = true
+      self.update_attribute(:reset_code, Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join ))
+      #logger.debug self.reset_code
+      #save(false)
+    end 
+
+    def recently_reset?
+      @reset
+    end 
+    
+    def delete_reset_code
+      self.update_attribute(:reset_code, nil)
+      #save(false)
+    end
 
   protected
     

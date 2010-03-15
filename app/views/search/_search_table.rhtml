@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <tr>
+        <td>Recipe Title</td>
+        <td>Prep Time</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% for result in @results %>
+    <tr>    
+        <td><%= result.title %></td>
+        <td><%= result.prep_time%></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+

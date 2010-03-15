@@ -9,12 +9,15 @@
   setTimeout(function() {
           $("#flash_error").hide('blind', {}, 500)
       }, 5000);
+      
+      setTimeout(function() {
+              $("#flash_notice").hide('blind', {}, 500)
+          }, 5000);
     });
   </script>
 </head>
 
 <body>
-  <%= render :partial=> 'base/flash_error' unless flash[:error].blank?%>
 <div id='header'>
   <div class='content'>
     <%= render :partial=> 'users/user_bar'%>
@@ -26,16 +29,19 @@
     </div>
     </a>
     
+    
     <div class='header_link_container'>
     <%=link_to 'Whats For Dinner', '#', :class => 'header_link'%>
-    <%=link_to 'Recipes', '#', :class => 'header_link'%>
-    <%=link_to 'Contribute', '#', :class => 'header_link'%>
+    <%=link_to 'Search', {:controller => 'search', :action => 'show'}, :class => 'header_link'%>
+    <%=link_to 'Contribute Recipes', '#', :class => 'header_link'%>
     
     </div>
   </div>
 </div>
 <br class='clear'>
 <div id='main_content' class='content'>
+<%= render :partial=> 'base/flash_error' unless flash[:error].blank?%>
+<%= render :partial=> 'base/flash_notice' unless flash[:notice].blank?%>
   <%=yield%>
 </div>
 </body>
