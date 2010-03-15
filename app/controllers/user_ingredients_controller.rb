@@ -20,6 +20,10 @@ class UserIngredientsController < ApplicationController
       format.xml  { render :xml => @user_ingredient }
     end
   end
+  
+  def show_items
+      @ingredient_category = IngredientCategory.find(params[:id])
+  end
 
   # GET /user_ingredients/new
   # GET /user_ingredients/new.xml
@@ -67,6 +71,7 @@ class UserIngredientsController < ApplicationController
       end
     end
   end
+  
 
   # DELETE /user_ingredients/1
   # DELETE /user_ingredients/1.xml
