@@ -1,0 +1,14 @@
+<div id="table">
+    <%= render :partial => "search_table" %>
+</div>
+        
+<% form_for :search, {:controller => 'search', :action => 'show'} do |f|%>
+<select name="search[type]">
+<option value="title">Title Search</option>
+<option value="ingredient">Ingredient Search</option>
+</select>
+<%= f.text_field :query %>
+<%= submit_tag "Search!" %>
+<% end %>
+
+
