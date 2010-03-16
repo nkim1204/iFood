@@ -8,7 +8,7 @@
   <tbody>
     <% for result in @results %>
     <tr>    
-        <td><%= result.title %></td>
+        <td><%= link_to result.title, recipe_path(result.id) %></td>
         <td><%= result.prep_time%></td>
     </tr>
     <%end%>

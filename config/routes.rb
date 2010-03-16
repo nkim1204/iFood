@@ -11,7 +11,8 @@ ActionController::Routing::Routes.draw do |map|
   map.edit_category 'ingredient_categories/edit/:id', :controller=> 'ingredient_categories', :action => 'edit'
   map.edit_ingredient 'ingredients/edit/:id', :controller=> 'ingredients', :action => 'edit'
   map.delete_ingredient 'ingredients/destroy/:id', :controller => 'ingredients', :action => 'destroy'
-  
+  map.destroy_user_ingredient 'user_ingredients/destroy/:id', :controller => 'user_ingredients', :action => 'destroy'
+  map.recipe 'recipes/:id', :controller => 'recipes', :action => 'show'
   map.forgot    '/forgot',                    :controller => 'users',     :action => 'forgot'
   map.reset     'reset/:reset_code',          :controller => 'users',     :action => 'reset'
 

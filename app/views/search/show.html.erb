@@ -1,7 +1,9 @@
 <div id="table">
     <%= render :partial => "search_table" %>
 </div>
-        
+<%if @searchfor && @results.empty?%>        
+  <b>Your Search For '<%=@searchfor%>' Returned 0 Results</b>
+<%end%>
 <% form_for :search, {:controller => 'search', :action => 'show'} do |f|%>
 <select name="search[type]">
 <option value="title">Title Search</option>

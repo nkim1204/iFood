@@ -5,7 +5,7 @@ class SearchController < ApplicationController
 	# here we're searching for the search word in the recipe title
 	if params[:search]
     q = params[:search][:query]
-
+    @searchfor = q
 	if params[:search][:type] == "title"
 	        ids = Array.new( Recipe.search_for_ids(q) )
 		for recipe in Recipe.find(ids)
