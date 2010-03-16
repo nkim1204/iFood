@@ -15,6 +15,7 @@
       <%=link_to 'Manage Site', :controller => :admin, :action => :index %>
     <% end %>
     logged in as <%=link_to current_user.login, home_path%> (<%=link_to 'logout', logout_path%>)
+    <%=link_to 'My Kitchen', {:controller => 'user_ingredients', :action => 'index'}%>
   <%else%>
     <%=link_to 'login', login_path%> | <%=link_to 'signup', signup_path%>
   <%end%>

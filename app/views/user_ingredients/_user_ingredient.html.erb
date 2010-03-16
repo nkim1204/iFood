@@ -7,6 +7,6 @@
 
 
 
-    <div class='last'><%=link_to_remote 'X', :url =>{:action => 'destroy', :id => user_ingredient.id}%></div>
+    <div class='last'><%=link_to_remote 'X', :url =>destroy_user_ingredient_path(user_ingredient.id)%></div>
   </li>
 </a>

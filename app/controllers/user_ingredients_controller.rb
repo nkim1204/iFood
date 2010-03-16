@@ -33,7 +33,7 @@ class UserIngredientsController < ApplicationController
       @user_ingredient = UserIngredient.new(:user_id => current_user.id, :ingredient_id => params[:id])
       session[:ingredient_id] = params[:id]
     end
-    #render :partial => 'add'
+    #render :partial => 'add_something'
   end
   
   # GET /user_ingredients/new
@@ -93,10 +93,5 @@ class UserIngredientsController < ApplicationController
   def destroy
     @user_ingredient = UserIngredient.find(params[:id])
     @user_ingredient.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(user_ingredients_url) }
-      format.xml  { head :ok }
-    end
   end
 end

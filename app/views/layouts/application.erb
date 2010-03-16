@@ -1,8 +1,7 @@
 <head>
-  <%=stylesheet_link_tag 'style'%>
+  <%= stylesheet_link_tag 'style'%>
   <%= javascript_include_tag :defaults %>
   <%= include_colorbox_assets %>
-  <%= yield :head %>
   
   <script type="text/javascript">
   $(document).ready(function() {
@@ -20,6 +19,8 @@
      $("#searchTable").tablesorter();
     });
   </script>
+  
+  <%= yield :head %>
 </head>
 
 <body>
@@ -37,9 +38,6 @@
     
     <div class='header_link_container'>
     <%=link_to 'Whats For Dinner', '#', :class => 'header_link'%>
-    <% if current_user %>
-    <%=link_to 'My Kitchen', {:controller => 'user_ingredients', :action => 'index'}, :class => 'header_link'%>
-    <% end %>
     <%=link_to 'Search', {:controller => 'search', :action => 'show'}, :class => 'header_link'%>
     <%=link_to 'Contribute Recipes', {:controller => 'recipes', :action => 'new'}, :class => 'header_link'%>
     
