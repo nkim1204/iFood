@@ -20,13 +20,28 @@ class UserIngredientsController < ApplicationController
       format.xml  { render :xml => @user_ingredient }
     end
   end
+  
+  def show_items
+      @ingredient_category = IngredientCategory.find(params[:id])
+      @dummy_tag = true
+  end
 
+  def add
+    @user_ingredient = UserIngredient.find_by_ingredient_id(params[:id])
+    @ingredient = Ingredient.find(params[:id])
+    if @user_ingredient.nil?
+      @user_ingredient = UserIngredient.new(:user_id => current_user.id, :ingredient_id => params[:id])
+      session[:ingredient_id] = params[:id]
+    end
+    #render :partial => 'add'
+  end
+  
   # GET /user_ingredients/new
   # GET /user_ingredients/new.xml
   def new
-    @user_ingredient = UserIngredient.new
+    #@user_ingredient = UserIngredient.new
     @ingredient_categories = IngredientCategory.find(:all)
-    render :partial => 'new'
+    #render :partial => 'new'
   end
 
   # GET /user_ingredients/1/edit
@@ -38,7 +53,11 @@ class UserIngredientsController < ApplicationController
   # POST /user_ingredients.xml
   def create
     @user_ingredient = UserIngredient.new(params[:user_ingredient])
-
+    @user_ingredient.user_id = current_user.id
+    @user_ingredient.ingredient_id = session[:ingredient_id]
+    session[:ingredient_id] = nil
+    #@user_ingredient.ingredient_id = @ingredient
+    
     respond_to do |format|
       if @user_ingredient.save
         flash[:notice] = 'UserIngredient was successfully created.'
@@ -55,7 +74,7 @@ class UserIngredientsController < ApplicationController
   # PUT /user_ingredients/1.xml
   def update
     @user_ingredient = UserIngredient.find(params[:id])
-
+    
     respond_to do |format|
       if @user_ingredient.update_attributes(params[:user_ingredient])
         flash[:notice] = 'UserIngredient was successfully updated.'
@@ -67,6 +86,7 @@ class UserIngredientsController < ApplicationController
       end
     end
   end
+  
 
   # DELETE /user_ingredients/1
   # DELETE /user_ingredients/1.xml
