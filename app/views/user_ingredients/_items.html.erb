@@ -1,8 +1,9 @@
 <ul>
 <%for ingredient in @ingredient_category.ingredients%>
  <li>
-	<%=ingredient.name%>
-</li>
+	<%=link_to_colorbox ingredient.name, :action => 'add', :id => ingredient.id %>
+
+ </li>
 <%end%>
 </ul>
 <br class='clear'>

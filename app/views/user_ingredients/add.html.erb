@@ -1,0 +1,18 @@
+<h1> <%=@user_ingredient.ingredient.name%></h1>
+
+<% form_for(@user_ingredient) do |f| %>
+
+<p>
+    <%= f.label :Quantity %><br />
+    <%= f.text_field :qty %>
+  </p>
+  <p>
+    <%= f.label :Unit %><br />
+    <%= f.select(:unit, ['kg','g','lbs','mg','g']) %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+
+<% end %>
+
