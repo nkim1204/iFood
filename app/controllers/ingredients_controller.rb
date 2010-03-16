@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-  before_filter :admin_required, :except => [:show]
+  before_filter :admin_required, :except => [:show, :select_for_recipe]
   def show
     @ingredient = Ingredient.find(params[:id])
   end
@@ -31,5 +31,13 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
     @ingredient.update_attributes(params[:ingredient])
     @ingredient.save
+  end
+  
+  def select_for_recipe
+    	@ingredients = Ingredient.find(:all, :conditions => [ 'LOWER(name) LIKE ?', '%' + params[:q].downcase + '%' ],  :order => 'name ASC', :limit => 8)
+
+    	@ingredients_hash = @ingredients.collect! { |x| {"name" => x.name, "id" => x.id } }
+
+    	render :partial => "ingredients/list_for_select"
   end
 end

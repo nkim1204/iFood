@@ -36,7 +36,7 @@
     <%=link_to 'My Kitchen', {:controller => 'user_ingredients', :action => 'index'}, :class => 'header_link'%>
     <% end %>
     <%=link_to 'Search', {:controller => 'search', :action => 'show'}, :class => 'header_link'%>
-    <%=link_to 'Contribute Recipes', '#', :class => 'header_link'%>
+    <%=link_to 'Contribute Recipes', {:controller => 'recipes', :action => 'new'}, :class => 'header_link'%>
     
     </div>
   </div>

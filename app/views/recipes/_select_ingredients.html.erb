@@ -1,0 +1,16 @@
+<div id="ing_sel">
+  <script>
+    $(document).ready(function () {
+      $("#ingredients_autocomplete").tokenInput("<%= ingredients_autocomplete_path%>", {
+          prePopulate: [
+          <% for ingredient in @recipe.ingredients %>
+          	{ "id":"<%= ingredient.id %>","name":"<%= ingredient.name %>" },
+          <% end %>],
+          hintText: "Type the name of your ingredients",
+          noResultsText: "No results",
+          searchingText: "Searching..."
+        });
+    });
+  </script>      
+  <input type="text" class="autocomplete_multiple" name="ingredients" id="ingredients_autocomplete" /> 
+</div>
