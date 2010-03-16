@@ -1,7 +1,7 @@
-<div id="table">
-    <%= render :partial => "search_table" %>
-</div>
-        
+<% content_for :head do %>
+  <%= javascript_include_tag 'jquery.tablesorter' %>  
+<% end %>
+
 <% form_for :search, {:controller => 'search', :action => 'show'} do |f|%>
 <select name="search[type]">
 <option value="title">Title Search</option>
@@ -11,4 +11,6 @@
 <%= submit_tag "Search!" %>
 <% end %>
 
+
+    <%= render :partial => "search_table" %>
 

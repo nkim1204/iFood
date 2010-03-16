@@ -6,6 +6,9 @@
   
   <script type="text/javascript">
   $(document).ready(function() {
+
+  
+
   setTimeout(function() {
           $("#flash_error").hide('blind', {}, 500)
       }, 5000);
@@ -13,6 +16,8 @@
       setTimeout(function() {
               $("#flash_notice").hide('blind', {}, 500)
           }, 5000);
+
+     $("#searchTable").tablesorter();
     });
   </script>
 </head>
