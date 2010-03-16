@@ -26,7 +26,7 @@ Rails::Initializer.run do |config|
   
   config.gem(
   'thinking-sphinx',
-  :lib     => 'thinking_sphinx',
+  :lib     => 'thinking_sphinx'
   )
 
 
