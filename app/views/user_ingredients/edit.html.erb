@@ -1,35 +1,16 @@
-<h1>Editing user_ingredient</h1>
+<h1> <%=@user_ingredient.ingredient.name%> </h1>
 
 <% form_for(@user_ingredient) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
-  </p>
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.label :ingredient_id %><br />
-    <%= f.text_field :ingredient_id %>
-  </p>
-  <p>
-    <%= f.label :qty %><br />
+
+<p>
+    <%= f.label :Quantity %><br />
     <%= f.text_field :qty %>
   </p>
   <p>
-    <%= f.label :unit %><br />
-    <%= f.text_field :unit %>
-  </p>
-  <p>
-    <%= f.label :created_at %><br />
-    <%= f.datetime_select :created_at %>
-  </p>
-  <p>
-    <%= f.label :updated_at %><br />
-    <%= f.datetime_select :updated_at %>
+    <%= f.label :Unit %><br />
+    <%= f.select(:unit, ['kg','g','mg','L', 'mL', 'pinch', 'large', 'medium', 'small']) %>
   </p>
   <p>
     <%= f.submit 'Update' %>

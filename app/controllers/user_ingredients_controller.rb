@@ -57,7 +57,6 @@ class UserIngredientsController < ApplicationController
     @user_ingredient.ingredient_id = session[:ingredient_id]
     session[:ingredient_id] = nil
     #@user_ingredient.ingredient_id = @ingredient
-    
     respond_to do |format|
       if @user_ingredient.save
         flash[:notice] = 'UserIngredient was successfully created.'
@@ -74,7 +73,6 @@ class UserIngredientsController < ApplicationController
   # PUT /user_ingredients/1.xml
   def update
     @user_ingredient = UserIngredient.find(params[:id])
-    
     respond_to do |format|
       if @user_ingredient.update_attributes(params[:user_ingredient])
         flash[:notice] = 'UserIngredient was successfully updated.'

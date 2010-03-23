@@ -1,0 +1,27 @@
+<h3><%=@recipe.title%></h3>
+
+
+Title:
+<%=@recipe.title%>
+<br />
+Description:
+<%=@recipe.overview%>
+<br />
+Prep Time:
+<%=@recipe.prep_time%> &nbsp; Minutes
+<br />
+<h4>Ingredients</h4>
+<ul>
+<%for ingredient in @recipe.ingredients%>
+  <li><%= ingredient.name%></li>
+<%end%>
+</ul>
+
+<h4>Instructions</h4>
+<ol>
+  <%for instruction in @recipe.recipe_instructions%>
+    <li>
+      <%=instruction.instruction_text%>
+    </li>
+  <%end%>
+</ol>

@@ -1,0 +1,72 @@
+
+<html>
+<head>
+<meta http-equiv=”Content-Type” content=”text/html; charset=iso-8859-1″>
+<title>Test jQuery</title>
+
+<script type=”text/javascript” src=”jquery.js”></script>
+
+<script type=”text/javascript”>
+function addFormField()
+{
+var id = document.getElementById(”id”).value;
+
+//JQUERY CODE
+
+$(”#fields”).append(”<p valign=’top’ id=’row” + id + “‘>word&nbsp;&nbsp;<input type=’text’ size=’20′ name=’word_txt[]‘ id=’word_” + id + “‘>&nbsp;&nbsp;Meaning&nbsp;&nbsp;<textarea  name=’meaning_txt[]‘ rows=’3′ cols=’20′ id=’meaning_” + id + “‘></textarea><a href=’#’ onClick=’removeFormField(\”#row” + id + “\”); return false;’>Remove</a></p>”);
+
+id = (id – 1) + 2;
+document.getElementById(”id”).value = id;
+}
+//REMOVE FUNCTION
+
+function removeFormField(id) {
+$(id).remove();
+}
+</script>
+
+<style>
+body{
+font-type: verdana;
+font-size: 12px;
+}
+table{
+border:1px solid #dddddd;
+}
+</style>
+<body>
+<table width=”50%” align=”center”>
+<tr>
+<td>
+<form action=”get_add_new_fields.php” method=”post” id=”form1″>
+<p>
+Click on the Add More link below to add words and and their meaning.
+<p>&nbsp;</p><p>&nbsp;</p>
+</p>
+
+<!–HIDDEN FIELD, AS A COUNTER–>
+<input type=”hidden” id=”id” value=”1″>
+Word&nbsp;&nbsp;<input type=’text’ size=’20′ name=’word_txt[]‘>&nbsp;&nbsp;Meaning&nbsp;&nbsp;<textarea  name=’meaning_txt[]‘ rows=’3′ cols=’20′></textarea>
+<!—THE CODE WILL APPEND THE ADDITION VALUES TO THE FOLLOWING DIV–>
+
+<div id=”fields”></div>
+
+<p><input type=”submit” value=”Submit” name=”submit”>
+<input type=”reset” value=”Reset” name=”reset”></p>
+
+</form>
+
+</td>
+</tr>
+
+<tr>
+<td>
+<p>&nbsp;</p><p>&nbsp;</p>
+<p>
+<a href=”#” onClick=”addFormField(); return false;”>Click here to add more…</a>
+</p>
+</td>
+</tr>
+</table>
+</body>
+</html>
