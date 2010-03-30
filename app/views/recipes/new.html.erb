@@ -7,6 +7,7 @@
 
 <%form_for @recipe, :action => 'create' do |f|%>
   <%=f.error_messages%>
+  <%=hidden_field_tag 'recipe[approved]', 'false' %>
   <%=f.label :title%>
   <%=f.text_field :title%>
   

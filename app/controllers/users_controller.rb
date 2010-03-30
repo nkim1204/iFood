@@ -11,6 +11,10 @@ class UsersController < ApplicationController
   def home
     @user = current_user
   end
+  
+  def edit
+    @user = current_user
+  end
  
   def create
     logout_keeping_session!
@@ -40,6 +44,30 @@ class UsersController < ApplicationController
       flash[:error]  = "We couldn't find a user with that activation code -- check your email? Or maybe you've already activated -- try signing in."
       redirect_back_or_default('/')
     end
+  end
+  
+  def update
+    @user = current_user
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "Profile Successfully Updated"
+      redirect_to :action => 'home'
+    else
+      render :action => 'edit'
+    end
+  end
+  
+  def update_password
+    @user = current_user
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "Password Successfully Updated"
+      redirect_to :action => 'edit'
+    else
+      render :action => 'change_password'
+    end
+  end
+  
+  def change_password
+    @user = current_user
   end
   
   def forgot

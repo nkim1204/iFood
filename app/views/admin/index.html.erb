@@ -1,4 +1,7 @@
 <h3>Recipes Awaiting Approval</h3>
+<ul id='items_list' class='ajax_list'>
+<%=render :partial => 'unapproved', :collection => @unapproved_recipes%>
+</ul>
 
 <h4>Actions</h4>
 <%=link_to 'Manage Ingredients/Categories', :controller => 'ingredient_categories'%>

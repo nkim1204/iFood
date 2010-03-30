@@ -1,4 +1,10 @@
- <%= render :partial => "recipe", :object => @recipe %>
+<%if current_user.is_admin%>
+  <%=link_to 'Delete', delete_recipe_path(@recipe.id)%>
+  <%if @recipe.approved == false%>
+    | &nbsp; <%=link_to 'Approve', :action => 'approve', :id => @recipe.id%>
+  <%end%>
+<%end%>
+<%= render :partial => "recipe", :object => @recipe %>
 
 <h4>Comments</h4>
    <% for comment in @recipe.recipe_comments %>

@@ -9,7 +9,19 @@ class RecipesController < ApplicationController
     @recipe_instruction = RecipeInstruction.new()
   end
 
+  def approve
+    @recipe = Recipe.find(params[:id])
+    @recipe.update_attribute(:approved, true)
+    flash[:notice] = "Recipe Successfully Approved"
+    redirect_to :action => 'show', :id => @recipe.id
+  end
   
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    flash[:notice] = "Successfully Deleted Recipe"
+    redirect_to :controller => 'admin', :action => 'index'
+  end
   
   def create
     @recipe = Recipe.new(params[:recipe])

@@ -1,0 +1,11 @@
+<h2>Edit Your Profile Information</h2>
+<%form_for @user, :url => {:action=>'update', :id=>@user.id} do |f|%>
+<%=f.error_messages%>
+  <%=f.label :email%>
+  <%=f.text_field :email%>
+  
+  <%=f.label :password%>
+  <%=link_to 'Change Password', :action => 'change_password'%>
+  <br />
+  <%=f.submit%>
+<%end%>
