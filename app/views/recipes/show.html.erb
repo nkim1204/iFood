@@ -1,23 +1,12 @@
-<h3><%=@recipe.title%></h3>
+ <%= render :partial => "recipe", :object => @recipe %>
 
-Description:
-<%=@recipe.overview%>
-<br />
-Prep Time:
-<%=@recipe.prep_time%> &nbsp; Minutes
-<br />
-<h4>Ingredients</h4>
-<ul>
-<%for ingredient in @recipe.ingredients%>
-  <li><%= ingredient.name%></li>
-<%end%>
-</ul>
+<h4>Comments</h4>
+   <% for comment in @recipe.recipe_comments %>
+      <%= comment.comment %>
+      <hr />
+<% end %>
 
-<h4>Instructions</h4>
-<ol>
-  <%for instruction in @recipe.recipe_instructions%>
-    <li>
-      <%=instruction.instruction_text%>
-    </li>
-  <%end%>
-</ol>
+<%= form_tag :action => "comment", :id => @recipe %>
+   <%= text_area "comment", "body", :rows => 3 %><br />
+   <%= submit_tag "Comment" %>
+</form>

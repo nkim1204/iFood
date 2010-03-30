@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  
   def new
     @recipe = Recipe.new
     @recipe_instruction = @recipe.recipe_instructions.new()
@@ -7,6 +8,8 @@ class RecipesController < ApplicationController
   def add_instruction
     @recipe_instruction = RecipeInstruction.new()
   end
+
+  
   
   def create
     @recipe = Recipe.new(params[:recipe])
@@ -35,6 +38,16 @@ class RecipesController < ApplicationController
   end
   
   def show
+    
     @recipe = Recipe.find(params[:id])
+
+  end
+  
+  def comment
+    @recipe_comments = RecipeComment.new(:recipe_id => params[:id], :user_id => current_user.id, :comment => params[:comment][:body])
+     if @recipe_comments.save
+     flash[:notice] = "Your comment has been added."
+   end 
+     redirect_to :action => "show", :id => params[:id]
   end
 end
