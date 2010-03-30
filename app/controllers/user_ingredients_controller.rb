@@ -33,7 +33,7 @@ class UserIngredientsController < ApplicationController
       @user_ingredient = UserIngredient.new(:user_id => current_user.id, :ingredient_id => params[:id])
       session[:ingredient_id] = params[:id]
     end
-    #render :partial => 'add_something'
+    #render :partial => 'add'
   end
   
   # GET /user_ingredients/new

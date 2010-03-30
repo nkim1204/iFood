@@ -1,6 +1,12 @@
 
 <% content_for :head do %>
   <%= javascript_include_tag 'jquery.tablesorter' %>  
+  
+  <script>
+  $(document).ready(function() {
+    $("#searchTable").tablesorter();
+  });
+  </script>
 <% end %>
 
 <div id="table">
@@ -18,7 +24,4 @@
 <%= f.text_field :query %>
 <%= submit_tag "Search!" %>
 <% end %>
-
-
-    <%= render :partial => "search_table" %>
 
