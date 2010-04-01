@@ -57,9 +57,9 @@ class RecipesController < ApplicationController
   
   def comment
     @recipe_comments = RecipeComment.new(:recipe_id => params[:id], :user_id => current_user.id, :comment => params[:comment][:body])
-     if @recipe_comments.save
-     flash[:notice] = "Your comment has been added."
-   end 
-     redirect_to :action => "show", :id => params[:id]
+    if @recipe_comments.save
+      flash[:notice] = "Your comment has been added."
+    end 
+    redirect_to :action => "show", :id => params[:id]
   end
 end

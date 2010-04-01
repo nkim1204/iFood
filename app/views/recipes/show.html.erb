@@ -13,8 +13,9 @@
       <%= comment.comment %>
       <hr />
 <% end %>
-
-<%= form_tag :action => "comment", :id => @recipe %>
-   <%= text_area "comment", "body", :rows => 3 %><br />
-   <%= submit_tag "Comment" %>
-</form>
+<%if current_user%>
+  <%= form_tag :action => "comment", :id => @recipe %>
+     <%= text_area "comment", "body", :rows => 3 %><br />
+     <%= submit_tag "Comment" %>
+  <form>
+<%end%>
