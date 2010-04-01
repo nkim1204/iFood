@@ -107,7 +107,7 @@ ul.ajax_list{
 }
 
 li.comment{
-	height:auto;
+	height:25px;
 	padding-top:5px;
 	clear:both;
 	border-bottom:1px dotted grey;

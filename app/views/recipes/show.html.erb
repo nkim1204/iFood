@@ -9,10 +9,10 @@
 <%= render :partial => "recipe", :object => @recipe %>
 
 <h4>Comments</h4>
-   <% for comment in @recipe.recipe_comments %>
-      <%= comment.comment %>
-      <hr />
-<% end %>
+   <ul id='items_list' class='ajax_list'>
+     <%=render :partial => 'recipe_comment', :collection => @recipe_comments%>
+   </ul>
+
 <%if current_user%>
   <%= form_tag :action => "comment", :id => @recipe %>
      <%= text_area "comment", "body", :rows => 3 %><br />

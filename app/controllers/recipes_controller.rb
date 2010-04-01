@@ -52,6 +52,7 @@ class RecipesController < ApplicationController
   def show
     
     @recipe = Recipe.find(params[:id])
+    @recipe_comments = @recipe.recipe_comments;
 
   end
   
@@ -61,5 +62,13 @@ class RecipesController < ApplicationController
       flash[:notice] = "Your comment has been added."
     end 
     redirect_to :action => "show", :id => params[:id]
+  end
+
+  def destroy_comment
+    @recipe_comment = RecipeComment.find(params[:id])
+    unless @recipe_comment.destroy
+      flash[:error] = "Error Deleting Comment"
+      redirect_to :action => 'show'
+    end
   end
 end
