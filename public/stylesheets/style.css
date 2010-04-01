@@ -89,6 +89,24 @@ ul.ajax_list{
 	float:left;
 }
 
+.user_id_section{
+	width:50px;
+	text-align:left;
+	float:left;
+}
+
+.user_username_section{
+	width:300px;
+	text-align:left;
+	float:left;
+}
+
+.user_email_section{
+	width:400px;
+	text-align:left;
+	float:left;
+}
+
 .commenter{
    width:200px;
    text-align:left;
