@@ -1,6 +1,7 @@
 <%if current_user%>
   <%if current_user.is_admin%>
     <%=link_to 'Delete', delete_recipe_path(@recipe.id)%>
+    | &nbsp; <%=link_to 'Edit', edit_recipe_path(@recipe.id)%>
     <%if @recipe.approved == false%>
       | &nbsp; <%=link_to 'Approve', :action => 'approve', :id => @recipe.id%>
     <%end%>

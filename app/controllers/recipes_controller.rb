@@ -4,6 +4,12 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
     @recipe_instruction = @recipe.recipe_instructions.new()
   end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+    @recipe_instruction = @recipe.recipe_instructions.find_by_recipe_id(params[:id])
+    render :action => 'new'
+  end
   
   def add_instruction
     @recipe_instruction = RecipeInstruction.new()

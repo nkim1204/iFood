@@ -10,6 +10,11 @@
     <tr>    
         <td><%= link_to result.title, recipe_path(result.id) %></td>
         <td><%= result.prep_time%></td>
+	<%if current_user%>
+	   <%if current_user.is_admin%>
+		<td><%= link_to 'Edit', edit_recipe_path(result.id) %></td>
+	   <%end%>
+	<%end%>
     </tr>
     <%end%>
   </tbody>
