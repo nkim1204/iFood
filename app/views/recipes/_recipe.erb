@@ -1,8 +1,8 @@
 <h3><%=@recipe.title%></h3>
 
-
-Title:
-<%=@recipe.title%>
+<% if @recipe.photo.exists? then %>
+<%= image_tag @recipe.photo.url(:medium) %>
+<%end%>
 <br />
 Description:
 <%=@recipe.overview%>
