@@ -13,6 +13,7 @@ Chicken a la King:
     overview: Faster than a speeding bullet! More tasty than a locomotive! Able to fill hungry tummies in a single bound! It's Super-King
     prep_time: 5
     title: Super Fast Chicken a la King
+    serving_qty: 1
 
 
 Easy Baked Chicken:
@@ -22,6 +23,7 @@ Easy Baked Chicken:
     overview: One of the easiest chicken recipes I know and always a hit!
     prep_time: 10 
     title: Easy Baked Chicken
+    serving_qty: 2
 
 Pollo a la Crema:
     id: 3
@@ -30,6 +32,7 @@ Pollo a la Crema:
     overview: I 'winged' this recipe after searching the Internet for an equivalent to a favorite restaurant dish. Hope you enjoy it as much a we did!
     prep_time: 20 
     title: Pollo a la Crema
+    serving_qty: 1
 
 Italian Marinated Chicken:
     id: 4
@@ -38,6 +41,7 @@ Italian Marinated Chicken:
     overview: Seasoned chicken breasts marinated in Italian-style salad dressing, then sauteed. Only four ingredients make a ferociously simple and tasty dish! Great tasting Italian chicken. Prego! Serve with noodles or rice, if desired.
     prep_time: 5 
     title: Italian Marinated Chicken
+    serving_qty: 3
 
 Easy Pasta Chicken:
     id: 5
@@ -46,6 +50,7 @@ Easy Pasta Chicken:
     overview: This is a quick, easy chicken pasta. 
     prep_time: 15 
     title: Easy Pasta Chicken
+    serving_qty: 1
 
 Easy Pasta Salad:
     id: 6
@@ -54,6 +59,7 @@ Easy Pasta Salad:
     overview: Red bell pepper and broccoli -- elegant and quick to make.
     prep_time: 10 
     title: Easy Pasta Salad
+    serving_qty: 2
 
 Pasta Salad:
     id: 7
@@ -62,6 +68,7 @@ Pasta Salad:
     overview: This is something I threw together one day. Prepare the veggies while the pasta cooks and you are done in 10 minutes. I use different kinds of tomatoes, depending on what I have on hand. Cherry or grape tomatoes are easy to just throw in - no cutting required.
     prep_time: 10 
     title: Pasta Salad
+    serving_qty: 1
 
 Wilted Spinach:
     id: 8
@@ -70,6 +77,7 @@ Wilted Spinach:
     overview: Delicious wilted spinach with a simple Mediterranean dressing.
     prep_time: 15 
     title: Wilted Spinach
+    serving_qty: 1
 
 Green Slime Smoothie:
     id: 9
@@ -78,6 +86,7 @@ Green Slime Smoothie:
     overview: This is yummy. With a name like this, your kids will love it.
     prep_time: 5 
     title: Green Slime Smoothie
+    serving_qty: 1
 
 Green Smoothie:
     id: 10
@@ -86,3 +95,4 @@ Green Smoothie:
     overview: A great way to get your kids to eat greens! You will be amazed by this yummy fruity smoothie. Experiment with different amounts or types of fruit and make your own.
     prep_time: 10 
     title: Green Smoothie
+    serving_qty: 2

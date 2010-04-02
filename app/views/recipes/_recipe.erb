@@ -10,6 +10,14 @@ Description:
 Prep Time:
 <%=@recipe.prep_time%> &nbsp; Minutes
 <br />
+
+Serves:
+<%=@recipe.serving_qty%> &nbsp; 
+<%if @recipe.serving_qty == 1%>
+Person
+<%else%>
+People
+<%end%>
 <h4>Ingredients</h4>
 <ul>
 <%for ingredient in @recipe.ingredients%>

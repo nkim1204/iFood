@@ -16,6 +16,9 @@
   
   <%=f.label :prep_time%>
   <%=f.text_field :prep_time, :size => 10%> &nbsp; Minutes
+
+  <%=f.label :serving_qty, 'Serves'%>
+  <%=f.text_field :serving_qty, :size => 3%> &nbsp; People
   <br />
   <h4>Ingredients</h4>
   <%= render :partial => 'select_ingredients'%>
