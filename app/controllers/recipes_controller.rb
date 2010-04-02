@@ -8,7 +8,30 @@ class RecipesController < ApplicationController
   def edit
     @recipe = Recipe.find(params[:id])
     @recipe_instruction = @recipe.recipe_instructions.find_by_recipe_id(params[:id])
-    render :action => 'new'
+  end
+  
+  def update
+    @recipe = Recipe.find(params[:id])
+
+    ingredients_array = params[:ingredients].split(",")
+  	for ingredient_string in ingredients_array
+  	  
+  	    ingredient = Ingredient.find_by_id(ingredient_string)
+	      
+  	    if ingredient.nil?
+   	      #@error = "Sorry, we don't know that mountain: " + mountain_string
+        else
+          @error = ""
+          @recipe.ingredients << ingredient unless @recipe.ingredients.include?(ingredient)
+        end
+  	end
+  	
+  	if @recipe.update_attributes(params[:recipe])
+  	  redirect_to :action => 'show', :id => @recipe.id
+	  else
+      @recipe_instruction = @recipe.recipe_instructions.new()
+	    render :action => 'new'
+	  end
   end
   
   def add_instruction
