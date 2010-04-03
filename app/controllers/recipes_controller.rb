@@ -82,7 +82,30 @@ class RecipesController < ApplicationController
     
     @recipe = Recipe.find(params[:id])
     @recipe_comments = @recipe.recipe_comments;
+    @recipe_ratings = @recipe.recipe_ratings;
+    @recipe_avg_rating = avg_rating()
+  end
 
+  def avg_rating
+    ratings = RecipeRating.all(:conditions => ["recipe_id =?", params[:id]], :select => "rating")
+    rating_sum = 0
+    for r in ratings
+        rating_sum = rating_sum + r.rating
+    end
+
+    res = 0
+    if ratings.size != 0
+        res = rating_sum / ratings.size
+    end
+    return res
+  end
+
+  def rate
+    @recipe_ratings = RecipeRating.new(:recipe_id => params[:id], :user_id => current_user.id, :rating => params[:rate][:rating].to_i )
+    if @recipe_ratings.save
+      flash[:notice] = "Your rating has been saved."
+    end 
+	redirect_to :action => 'show', :id => params[:id]
   end
   
   def comment
