@@ -19,6 +19,12 @@ class UserMailer < ActionMailer::Base
     @body[:url]  = "http://localhost:3000/reset/#{user.reset_code}"
   end
   
+  def new_recipe(user, recipe)
+    setup_email(user)
+    @subject    += 'New Recipe Awaiting Approval'
+    @body[:url]  = "http://localhost:3000/recipes/show/#{recipe.id}"
+  end
+  
   protected
     def setup_email(user)
       @recipients  = "#{user.email}"

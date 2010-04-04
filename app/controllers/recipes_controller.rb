@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  
+  before_filter :login_required, :except => [:show]
   def new
     @recipe = Recipe.new
     @recipe_instruction = @recipe.recipe_instructions.new()
@@ -42,6 +42,8 @@ class RecipesController < ApplicationController
   	params[:recipe_instruction].each { |p| @recipe.recipe_instructions << RecipeInstruction.new( p ) }
   	
   	if @recipe.save
+  	  admin = User.find_by_is_admin(true)
+  	  UserMailer.deliver_new_recipe(admin, @recipe)
   	  redirect_to :action => 'show', :id => @recipe.id
 	  else
       @recipe_instruction = @recipe.recipe_instructions.new()
