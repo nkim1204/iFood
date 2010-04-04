@@ -103,9 +103,16 @@ class RecipesController < ApplicationController
   end
 
   def rate
-    @recipe_ratings = RecipeRating.new(:recipe_id => params[:id], :user_id => current_user.id, :rating => params[:rate][:rating].to_i )
+    r = RecipeRating.all(:conditions => ["recipe_id = ? AND user_id = ?", params[:id], current_user.id])
+    msg = "Your rating has been saved."
+    if r.size != 0 
+        @recipe_ratings = RecipeRating.update( r.first.id, :rating => params[:rate][:rating].to_i )
+        msg = "Your rating has been updated."
+    else
+         @recipe_ratings = RecipeRating.new(:recipe_id => params[:id], :user_id => current_user.id, :rating => params[:rate][:rating].to_i )
+    end
     if @recipe_ratings.save
-      flash[:notice] = "Your rating has been saved."
+      flash[:notice] = msg
     end 
 	redirect_to :action => 'show', :id => params[:id]
   end
