@@ -89,6 +89,54 @@ ul.ajax_list{
 	float:left;
 }
 
+.user_id_section{
+	width:50px;
+	text-align:left;
+	float:left;
+}
+
+.user_username_section{
+	width:300px;
+	text-align:left;
+	float:left;
+}
+
+.user_email_section{
+	width:400px;
+	text-align:left;
+	float:left;
+}
+
+.commenter{
+   width:200px;
+   text-align:left;
+   float:left;
+   font-family:fantasy;
+   font-weight:bold;
+   color: rgb(255,165,0);
+}
+
+.comment_desc{
+	width: 700px;
+	text-align:left;
+	float:right:
+	display: block;
+	overflow: auto;
+}
+
+li.comment{
+	height:auto;
+	padding-top:5px;
+	clear:both;
+	border-bottom:1px dotted grey;
+	width:100%;
+}
+
+.first{
+	float:left;
+	text-align:left;
+}
+
 .last{
 	float:right;
 	text-align:right;

@@ -1,0 +1,2 @@
+id = dom_id(@user)
+page[id].blind_up

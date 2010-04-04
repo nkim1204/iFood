@@ -1,0 +1,2 @@
+id = dom_id(@recipe_comment)
+page[id].blind_up

@@ -5,3 +5,22 @@
 #
 # two:
 #   column: value
+
+rat1:
+  id: 1
+  recipe_id: 5
+  user_id: 1
+  rating: 5
+  
+rat2:
+  id: 2
+  recipe_id: 5
+  user_id: 1
+  rating: 3
+  
+rat3:
+  id: 3
+  recipe_id: 2
+  user_id: 1
+  rating: 2
+

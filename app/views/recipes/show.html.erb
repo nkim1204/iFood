@@ -1,18 +1,48 @@
-<%if current_user.is_admin%>
-  <%=link_to 'Delete', delete_recipe_path(@recipe.id)%>
-  <%if @recipe.approved == false%>
-    | &nbsp; <%=link_to 'Approve', :action => 'approve', :id => @recipe.id%>
+<%if current_user%>
+  <%if current_user.is_admin%>
+    <%=link_to 'Delete', delete_recipe_path(@recipe.id)%>
+    | &nbsp; <%=link_to 'Edit', edit_recipe_path(@recipe.id)%>
+    <%if @recipe.approved == false%>
+      | &nbsp; <%=link_to 'Approve', :action => 'approve', :id => @recipe.id%>
+    <%end%>
   <%end%>
 <%end%>
 <%= render :partial => "recipe", :object => @recipe %>
 
-<h4>Comments</h4>
-   <% for comment in @recipe.recipe_comments %>
-      <%= comment.comment %>
-      <hr />
-<% end %>
+<h4>Average Rating</h4>
+<div>
+<% if @recipe_avg_rating == 0 %>
+<p>No ratings for this recipe. Be the first to rate it!</p>
+<%end%>
+<%@recipe_avg_rating.times{  %>
+<img src="/images/rating_star.png"></img>
+<%} %>
+</div>
 
-<%= form_tag :action => "comment", :id => @recipe %>
-   <%= text_area "comment", "body", :rows => 3 %><br />
-   <%= submit_tag "Comment" %>
+<%if current_user %>
+<h4>
+Rate this recipe
+</h4>
+<%= form_tag :action => "rate", :id => @recipe.id %>
+<select name="rate[rating]">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+<%= submit_tag "Rate!" %>
 </form>
+<%end%>
+
+<h4>Comments</h4>
+   <ul id='items_list' class='ajax_list'>
+     <%=render :partial => 'recipe_comment', :collection => @recipe_comments%>
+   </ul>
+
+<%if current_user%>
+  <%= form_tag :action => "comment", :id => @recipe %>
+     <%= text_area "comment", "body", :rows => 3 %><br />
+     <%= submit_tag "Comment" %>
+  </form>
+<%end%>

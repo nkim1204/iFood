@@ -14,8 +14,11 @@ ActionController::Routing::Routes.draw do |map|
   map.destroy_user_ingredient 'user_ingredients/destroy/:id', :controller => 'user_ingredients', :action => 'destroy'
   map.change_password 'users/change_password', :controller => 'users', :action => 'change_password'
   map.edit_user 'users/edit', :controller => 'users', :action => 'edit'
+  map.list_users 'users/list', :controller => 'users', :action => 'list'
+  map.delete_user 'users/destroy/:id', :controller => 'users', :action => 'destroy'
   map.delete_recipe 'recipes/destroy/:id', :controller => 'recipes', :action => 'destroy'
-  map.recipe 'recipes/show/:id', :controller => 'recipes', :action => 'show'
+
+  map.edit_recipe 'recipes/edit/:id', :controller => 'recipes', :action => 'edit'
   map.forgot    '/forgot',                    :controller => 'users',     :action => 'forgot'
   map.reset     'reset/:reset_code',          :controller => 'users',     :action => 'reset'
 

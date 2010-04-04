@@ -6,7 +6,7 @@ quentin:
   salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
   crypted_password:          808a6bdf9f3e126d3ee419e20e81e0c5c9d7a5db # 'monkey'
   created_at:                <%= 5.days.ago.to_s :db  %>
-  remember_token_expires_at: <%= 1.days.from_now.to_s %>
+  remember_token_expires_at: 
   remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb
   activation_code:           
   activated_at:              <%= 5.days.ago.to_s :db %>
@@ -42,9 +42,22 @@ bob:
   salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
   crypted_password:          808a6bdf9f3e126d3ee419e20e81e0c5c9d7a5db # 'monkey'
   created_at:                <%= 5.days.ago.to_s :db  %>
-  remember_token_expires_at: <%= 1.days.from_now.to_s %>
+  remember_token_expires_at: 
   remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb
   activation_code:           
+  activated_at:              <%= 5.days.ago.to_s :db %>
+  is_admin:                  '1'
+
+admin:
+  id:                       5
+  login:                     admin
+  email:                     admin@example.com
+  salt:                      55c4d2a9fc71d8307105459cede1977e033ab983 # SHA1('0')
+  crypted_password:          66b5d444d43ff92b4b1c3af5cda4520fbfcfefc3 # 'qwer1234'
+  created_at:                <%= 5.days.ago.to_s :db  %>
+  remember_token_expires_at: 
+  remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb
+  activation_code:
   activated_at:              <%= 5.days.ago.to_s :db %>
   is_admin:                  '1'
 

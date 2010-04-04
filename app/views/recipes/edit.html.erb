@@ -1,0 +1,36 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'jquery.tokeninput' %>
+  <%= stylesheet_link_tag 'token-input'  %>  
+<% end %>
+
+<h2>Update A Recipe</h2>
+
+<%form_for @recipe, :action => 'update', :html => { :multipart => true } do |f|%>
+  <%=f.error_messages%>
+  <%=f.label :title%>
+  <%=f.text_field :title%>
+  
+  <%=f.label :overview, 'Description'%>
+  <%=f.text_area :overview, :rows => 5%>
+  
+  <%=f.label :prep_time%>
+  <%=f.text_field :prep_time, :size => 10%> &nbsp; Minutes
+
+  <%=f.label :serving_qty, 'Serves'%>
+  <%=f.text_field :serving_qty, :size => 3%> &nbsp; People
+
+  <%= render :partial => 'form', :locals => { :f => f } %>
+
+  <br />
+  <h4>Ingredients</h4>
+  <%= render :partial => 'select_ingredients'%>
+  <br />
+<%if false%><!-- Editing instructions is really buggy! -->  
+  <h4>Instructions</h4>
+  <ol id='instructions'>
+  <%= render :partial => 'recipe_instructions/new'%>
+  </ol>
+  <%=link_to_remote 'Add Another Instruction', :url => {:action => 'add_instruction'}%>
+<%end%>
+  <%=f.submit%>
+<%end%>

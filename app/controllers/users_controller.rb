@@ -15,6 +15,11 @@ class UsersController < ApplicationController
   def edit
     @user = current_user
   end
+
+  def edit_user
+    @user = User.find(params[:id])
+    render :action => 'edit'
+  end
  
   def create
     logout_keeping_session!
@@ -94,6 +99,18 @@ class UsersController < ApplicationController
         else
           render :action => :reset
         end
+      end
+    end
+
+    def list
+      @users = User.find(:all)
+    end
+
+    def destroy
+      @user = User.find(params[:id])
+      unless @user.destroy
+        flash[:error] = "Error Deleting User"
+        redirect_to :action => 'list'
       end
     end
 end

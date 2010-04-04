@@ -5,7 +5,7 @@
 
 <h2>Contribute A Recipe</h2>
 
-<%form_for @recipe, :action => 'create' do |f|%>
+<%form_for @recipe, :action => 'create', :html => { :multipart => true } do |f|%>
   <%=f.error_messages%>
   <%=hidden_field_tag 'recipe[approved]', 'false' %>
   <%=f.label :title%>
@@ -16,6 +16,12 @@
   
   <%=f.label :prep_time%>
   <%=f.text_field :prep_time, :size => 10%> &nbsp; Minutes
+
+  <%=f.label :serving_qty, 'Serves'%>
+  <%=f.text_field :serving_qty, :size => 3%> &nbsp; People
+
+  <%= render :partial => 'form', :locals => { :f => f } %>
+
   <br />
   <h4>Ingredients</h4>
   <%= render :partial => 'select_ingredients'%>
