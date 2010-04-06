@@ -11,19 +11,27 @@ Prep Time:
 <%=@recipe.prep_time%> &nbsp; Minutes
 <br />
 
-Serves:
-<%=@recipe.serving_qty%> &nbsp; 
-<%if @recipe.serving_qty == 1%>
-Person
-<%else%>
-People
-<%end%>
+<%= form_tag :action => "adjust_ingredient_amt", :id => @recipe.id%>
+Yield:
+<%= text_field "yield", "new_serving_qty", :size => 3, :value=>@recipe.serving_qty %>  Serving(s) 
+<%= submit_tag "Adjust Quantity"%>
+</form>
+
 <h4>Ingredients</h4>
-<ul>
-<%for ingredient in @recipe.ingredients%>
-  <li><%= ingredient.name%></li>
+<table RULES=ROWS>
+<tr>
+<td width="20%">
+<%for ingredient in @recipe.ingredients%> 
+  <%= ingredient.name%><br/>
 <%end%>
-</ul>
+</td>
+<td width="20%">
+<%for recipe_ingredient in @recipe.recipe_ingredients%>
+  <%= recipe_ingredient.qty %>&nbsp;&nbsp;(<%=  recipe_ingredient.unit%>)<br/>
+<%end%>
+</td>
+</tr>
+</table>
 
 <h4>Instructions</h4>
 <ol>

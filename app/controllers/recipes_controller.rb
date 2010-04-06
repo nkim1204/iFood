@@ -132,4 +132,15 @@ class RecipesController < ApplicationController
       redirect_to :action => 'show'
     end
   end
+  
+  def adjust_ingredient_amt
+    @recipe = Recipe.find(params[:id])
+    @serving_qty = @recipe.serving_qty
+    
+    for recipe_ingredient in @recipe.recipe_ingredients
+      #recipe_ingredient.qty = recipe_ingredient.qty / @serving_qty * new_serving_qty
+    end
+    
+    redirect_to :action => 'show'
+  end
 end
