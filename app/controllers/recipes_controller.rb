@@ -83,9 +83,12 @@ class RecipesController < ApplicationController
   def show
     
     @recipe = Recipe.find(params[:id])
-    @recipe_comments = @recipe.recipe_comments;
-    @recipe_ratings = @recipe.recipe_ratings;
+    @recipe_comments = @recipe.recipe_comments
+    @recipe_ratings = @recipe.recipe_ratings
     @recipe_avg_rating = avg_rating()
+    if @serving_qty.nil?
+      @serving_qty = @recipe.serving_qty
+    end
   end
 
   def avg_rating
@@ -135,12 +138,10 @@ class RecipesController < ApplicationController
   
   def adjust_ingredient_amt
     @recipe = Recipe.find(params[:id])
-    @serving_qty = @recipe.serving_qty
-    
-    for recipe_ingredient in @recipe.recipe_ingredients
-      #recipe_ingredient.qty = recipe_ingredient.qty / @serving_qty * new_serving_qty
-    end
-    
-    redirect_to :action => 'show'
+    @recipe_comments = @recipe.recipe_comments
+    @recipe_ratings = @recipe.recipe_ratings
+    @recipe_avg_rating = avg_rating()
+    @serving_qty = params[:new_qty][:qty].to_i()
+    render :action => 'show'
   end
 end

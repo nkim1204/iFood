@@ -13,7 +13,7 @@ Prep Time:
 
 <%= form_tag :action => "adjust_ingredient_amt", :id => @recipe.id%>
 Yield:
-<%= text_field "yield", "new_serving_qty", :size => 3, :value=>@recipe.serving_qty %>  Serving(s) 
+<%= text_field :new_qty, :qty, :size => 3, :value=>@serving_qty %>  Serving(s) 
 <%= submit_tag "Adjust Quantity"%>
 </form>
 
@@ -27,7 +27,7 @@ Yield:
 </td>
 <td width="20%">
 <%for recipe_ingredient in @recipe.recipe_ingredients%>
-  <%= recipe_ingredient.qty %>&nbsp;&nbsp;(<%=  recipe_ingredient.unit%>)<br/>
+  <%= @serving_qty*recipe_ingredient.qty %>&nbsp;&nbsp;(<%=  recipe_ingredient.unit%>)<br/>
 <%end%>
 </td>
 </tr>
