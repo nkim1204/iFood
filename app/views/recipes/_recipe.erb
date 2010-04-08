@@ -20,8 +20,8 @@ People
 <%end%>
 <h4>Ingredients</h4>
 <ul>
-<%for ingredient in @recipe.ingredients%>
-  <li><%= ingredient.name%></li>
+<%for recipe_ingredient in @recipe.recipe_ingredients%>
+  <li><%= recipe_ingredient.ingredient.name%></li>
 <%end%>
 </ul>
 
