@@ -18,7 +18,7 @@ class Recipe < ActiveRecord::Base
   define_index do
     indexes title, :sortable => true
  #   indexes recipe.ingredients.name, :as => :ingredient, :sortable => true
-    has prep_time  
+    has prep_time, id
   end
   
 end

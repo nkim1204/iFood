@@ -1,1 +1,7 @@
 <h1>Welcome To iFood</h1>
+
+<div id="table">
+  <% if logged_in?%>
+    <%= render :partial => "auto_search_results" %>
+  <% end %>
+</div>

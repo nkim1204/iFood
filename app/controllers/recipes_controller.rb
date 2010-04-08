@@ -83,9 +83,12 @@ class RecipesController < ApplicationController
   def show
     
     @recipe = Recipe.find(params[:id])
-    @recipe_comments = @recipe.recipe_comments;
-    @recipe_ratings = @recipe.recipe_ratings;
+    @recipe_comments = @recipe.recipe_comments
+    @recipe_ratings = @recipe.recipe_ratings
     @recipe_avg_rating = avg_rating()
+    if @serving_qty.nil?
+      @serving_qty = @recipe.serving_qty
+    end
   end
 
   def avg_rating
@@ -103,9 +106,16 @@ class RecipesController < ApplicationController
   end
 
   def rate
-    @recipe_ratings = RecipeRating.new(:recipe_id => params[:id], :user_id => current_user.id, :rating => params[:rate][:rating].to_i )
+    r = RecipeRating.all(:conditions => ["recipe_id = ? AND user_id = ?", params[:id], current_user.id])
+    msg = "Your rating has been saved."
+    if r.size != 0 
+        @recipe_ratings = RecipeRating.update( r.first.id, :rating => params[:rate][:rating].to_i )
+        msg = "Your rating has been updated."
+    else
+         @recipe_ratings = RecipeRating.new(:recipe_id => params[:id], :user_id => current_user.id, :rating => params[:rate][:rating].to_i )
+    end
     if @recipe_ratings.save
-      flash[:notice] = "Your rating has been saved."
+      flash[:notice] = msg
     end 
 	redirect_to :action => 'show', :id => params[:id]
   end
@@ -124,5 +134,14 @@ class RecipesController < ApplicationController
       flash[:error] = "Error Deleting Comment"
       redirect_to :action => 'show'
     end
+  end
+  
+  def adjust_ingredient_amt
+    @recipe = Recipe.find(params[:id])
+    @recipe_comments = @recipe.recipe_comments
+    @recipe_ratings = @recipe.recipe_ratings
+    @recipe_avg_rating = avg_rating()
+    @serving_qty = params[:new_qty][:qty].to_i()
+    render :action => 'show'
   end
 end
