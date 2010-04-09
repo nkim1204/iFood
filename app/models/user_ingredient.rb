@@ -7,5 +7,6 @@ class UserIngredient < ActiveRecord::Base
   define_index do
     indexes unit
     has user_id, ingredient_id
+    set_property :delta => true
   end
 end
