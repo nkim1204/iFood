@@ -12,6 +12,8 @@ ActionController::Routing::Routes.draw do |map|
   map.edit_ingredient 'ingredients/edit/:id', :controller=> 'ingredients', :action => 'edit'
   map.delete_ingredient 'ingredients/destroy/:id', :controller => 'ingredients', :action => 'destroy'
   map.destroy_user_ingredient 'user_ingredients/destroy/:id', :controller => 'user_ingredients', :action => 'destroy'
+  map.destroy_grocery_ingredient 'grocery_ingredients/destroy/:id', :controller => 'grocery_ingredients', :action => 'destroy'
+  map.grocery_to_user_ingredient 'grocery_ingredients/grocery_to_user/:id', :controller => 'grocery_ingredients', :action => 'grocery_to_user'
   map.change_password 'users/change_password', :controller => 'users', :action => 'change_password'
   map.edit_user 'users/edit', :controller => 'users', :action => 'edit'
   map.list_users 'users/list', :controller => 'users', :action => 'list'
@@ -29,6 +31,7 @@ map.ingredients_autocomplete 'ingredients/select_for_recipe', :controller => 'in
   map.resources :ingredient_categories
   map.resources :ingredients
   map.resources :recipes
+  map.resources :grocery_ingredients
 
   map.resource :session
 

@@ -1,0 +1,12 @@
+<a href='/grocery_ingredients/add/<%=grocery_ingredient.ingredient_id%>' class='highlightable'>
+  <li id=<%=dom_id(grocery_ingredient)%> class='highlightable'>
+
+    <div class='section'><%=grocery_ingredient.ingredient.name%></div>
+    <div class='section'><%=grocery_ingredient.qty%></div>
+    <div class='section'><%=grocery_ingredient.unit%></div>
+
+
+	<div class-'last'><%=link_to_remote 'Add', :url => grocery_to_user_ingredient_path(grocery_ingredient.id)%></div>
+    <div class='last'><%=link_to_remote 'X', :url =>destroy_grocery_ingredient_path(grocery_ingredient.id)%></div>
+  </li>
+</a>

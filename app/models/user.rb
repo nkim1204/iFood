@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
 
-  has_many :ingredients, :through => :user_ingredients
+  has_many :ingredients, :through => :user_ingredients, :through => :grocery_ingredients
   has_many :recipe_ratings
   has_many :recipe_comments
 

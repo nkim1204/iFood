@@ -16,7 +16,26 @@ Yield:
 <%= text_field :new_qty, :qty, :size => 3, :value=>@serving_qty %>  Serving(s) 
 <%= submit_tag "Adjust Quantity"%>
 </form>
-
+<% if current_user %>
+<h4>Ingredients</h4>
+<%= form_tag :action => "add_to_grocery_list", :id => @recipe.id %>
+<table RULES=ROWS>
+<tr>
+<td width="20%">
+<%for ingredient in @recipe.ingredients%> 
+  <%=check_box 'grocery', ingredient.id %><%= ingredient.name%><br/>
+<%end%>
+</td>
+<td width="20%">
+<%for recipe_ingredient in @recipe.recipe_ingredients%>
+  <%= @serving_qty*recipe_ingredient.qty %>&nbsp;&nbsp;(<%=  recipe_ingredient.unit%>)<br/>
+<%end%>
+</td>
+</tr>
+</table>
+<%= submit_tag "Add Items to Grocery List"%>
+</form>
+<%else%>
 <h4>Ingredients</h4>
 <table RULES=ROWS>
 <tr>
@@ -32,7 +51,7 @@ Yield:
 </td>
 </tr>
 </table>
-
+<%end%>
 <h4>Instructions</h4>
 <ol>
   <%for instruction in @recipe.recipe_instructions%>

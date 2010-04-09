@@ -1,0 +1,7 @@
+<h1>My Grocery List</h1>
+
+<ul id='items_list' class='ajax_list'>
+  <%=render :partial => 'grocery_ingredient', :collection => @grocery_ingredients %>
+</ul>
+
+<%=link_to 'Add ingredient to my grocery list', new_grocery_ingredient_path %>
