@@ -95,6 +95,18 @@ ul.ajax_list{
 	float:left;
 }
 
+.user_active_section{
+	width:100px;
+	text-align:left;
+	float:left;
+}
+
+.user_category_section{
+	width:50px;
+	text-align:left;
+	float:left;
+}
+
 .commenter{
    width:200px;
    text-align:left;
