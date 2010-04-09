@@ -3,7 +3,7 @@ class UserIngredientsController < ApplicationController
   # GET /user_ingredients.xml
   before_filter :login_required
   def index
-    @user_ingredients = UserIngredient.all
+    @user_ingredients = UserIngredient.find(:all, :conditions => {:user_id => current_user.id})
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,7 +28,7 @@ class UserIngredientsController < ApplicationController
   end
 
   def add
-    @user_ingredient = UserIngredient.find_by_ingredient_id(params[:id])
+    @user_ingredient = UserIngredient.find(:all, :conditions => { :user_id => current_user.id, :ingredient_id => params[:id] })[0]
     @ingredient = Ingredient.find(params[:id])
     if @user_ingredient.nil?
       @user_ingredient = UserIngredient.new(:user_id => current_user.id, :ingredient_id => params[:id])

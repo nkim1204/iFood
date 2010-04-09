@@ -1,0 +1,34 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'jquery.tablesorter' %>
+
+  <script>
+  $(document).ready(function() {
+    $("#auto_search_results_table").tablesorter();
+  });
+  </script>
+<% end %>
+
+
+<table id="auto_search_results_table">
+  <thead>
+    <tr>
+        <th>Recipe Title</th>
+        <th>Prep Time</th>
+        <th>Matching # Ingredients</th>
+    </tr>
+  </thead>  
+
+  <tbody>
+    <% for result in @auto_results %>
+      <% recipe = Recipe.search :with => {:id => result[0]} %>
+      <% matches = result[1] %>
+      <tr>
+        <td><%= link_to recipe[0].title, recipe_path(recipe[0].id) %></td>
+        <td><%= recipe[0].prep_time.to_i()%></td>
+        <td><%= matches%></td>
+      </tr>
+    
+    <%end%>
+  </tbody>
+</table>
+

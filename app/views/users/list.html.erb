@@ -1,3 +1,24 @@
-<ul id='items_list' class='ajax_list'>
+<% content_for :head do %>
+  <%= javascript_include_tag 'jquery.tablesorter' %>  
+  
+  <script>
+  $(document).ready(function() {
+    $("#items_list").tablesorter();
+  });
+  </script>
+<% end %>
+
+<table id='items_list' class='ajax_list'>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Email</th>
+	  <th>Active</th>
+	  <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
   <%=render :partial => 'user', :collection => @users%>
-</ul>
+  </tbody>
+</table>

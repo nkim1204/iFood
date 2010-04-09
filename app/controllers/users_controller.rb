@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
-  before_filter :login_required, :except => [:new, :create, :activate]
+  before_filter :login_required, :except => [:new, :create, :activate, :forgot, :reset]
 
   # render new.rhtml
   def new
@@ -13,12 +13,11 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = current_user
-  end
-
-  def edit_user
-    @user = User.find(params[:id])
-    render :action => 'edit'
+    if current_user.is_admin?
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
   end
  
   def create
@@ -52,27 +51,43 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = current_user
+    if current_user.is_admin?
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
     if @user.update_attributes(params[:user])
       flash[:notice] = "Profile Successfully Updated"
-      redirect_to :action => 'home'
+      if current_user.is_admin?
+        redirect_to :action => 'list'
+      else
+        redirect_to :action => 'home'
+      end
     else
-      render :action => 'edit'
+      render :action => 'edit', :id => params[:id]
     end
   end
   
   def update_password
-    @user = current_user
+    if current_user.is_admin?
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
     if @user.update_attributes(params[:user])
       flash[:notice] = "Password Successfully Updated"
-      redirect_to :action => 'edit'
+      redirect_to :action => 'edit', :id => @user.id
     else
-      render :action => 'change_password'
+      render :action => 'change_password', :id => params[:id]
     end
   end
   
   def change_password
-    @user = current_user
+    if current_user.is_admin?
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
   end
   
   def forgot

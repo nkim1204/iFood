@@ -1,6 +1,7 @@
 <% content_for :head do %>
   <%= javascript_include_tag 'jquery.tokeninput' %>
   <%= stylesheet_link_tag 'token-input'  %>  
+ 
 <% end %>
 
 <h2>Contribute A Recipe</h2>
@@ -23,13 +24,15 @@
   <%= render :partial => 'form', :locals => { :f => f } %>
 
   <br />
-  <h4>Ingredients</h4>
-  <%= render :partial => 'select_ingredients'%>
+  <h4>Ingredients</h4><%=link_to_remote 'Add Another Ingredient', :url => {:action => 'add_ingredient'}%>
+  <div id='ingredients'>
+  <%= render :partial => 'recipe_ingredients/new'%>
+  </div>
   <br />
-  <h4>Instructions</h4>
+  <h4>Instructions</h4><%=link_to_remote 'Add Another Instruction', :url => {:action => 'add_instruction'}%>
   <ol id='instructions'>
   <%= render :partial => 'recipe_instructions/new'%>
   </ol>
-  <%=link_to_remote 'Add Another Instruction', :url => {:action => 'add_instruction'}%>
+  
   <%=f.submit%>
 <%end%>

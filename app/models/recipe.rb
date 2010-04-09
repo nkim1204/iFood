@@ -19,6 +19,7 @@ class Recipe < ActiveRecord::Base
     indexes title, :sortable => true
  #   indexes recipe.ingredients.name, :as => :ingredient, :sortable => true
     has prep_time, id
+    set_property :delta => true
   end
   
 end

@@ -1,4 +1,7 @@
 <head>
+  <%= stylesheet_link_tag 'blueprint/screen.css'%>
+  <%= stylesheet_link_tag 'blueprint/print.css'%>
+  <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
   <%= stylesheet_link_tag 'style'%>
   <%= javascript_include_tag :defaults %>
   <%= include_colorbox_assets %>
@@ -24,25 +27,22 @@
 <body>
 <div id='header'>
   <div class='content'>
-    <%= render :partial=> 'users/user_bar'%>
-    <br class='clear'>
-    <a href='/'>
-    <div id='logo_box'>
+    <a href='/' class='span-4'>
     <div id='logo'>
-    </div>
     </div>
     </a>
     
+    <%= render :partial=> 'users/user_bar'%>
     
     <div class='header_link_container'>
-    <%=link_to 'Whats For Dinner', '#', :class => 'header_link'%>
-    <%=link_to 'Search', {:controller => 'search', :action => 'show'}, :class => 'header_link'%>
-    <%=link_to 'Contribute Recipes', {:controller => 'recipes', :action => 'new'}, :class => 'header_link'%>
+    <%=link_to 'About', {:controller => 'base', :action => 'index'}, :class => 'header_link span-4'%>
+    <%=link_to 'Contribute', {:controller => 'recipes', :action => 'new'}, :class => 'header_link span-4'%>
+    <%=link_to 'Recipes', {:controller => 'recipes', :action => 'index'}, :class => 'header_link span-4'%>
+    <%=link_to 'Search', {:controller => 'search', :action => 'show'}, :class => 'header_link span-4'%>
     
     </div>
   </div>
 </div>
-<br class='clear'>
 <div id='main_content' class='content'>
 <%= render :partial=> 'base/flash_error' unless flash[:error].blank?%>
 <%= render :partial=> 'base/flash_notice' unless flash[:notice].blank?%>

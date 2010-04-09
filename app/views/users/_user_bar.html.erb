@@ -9,7 +9,7 @@
                                <%# link_to "Sign up", signup_path, { :title => "Create an account" } %></div>
 <% end -%> -->
 
-<div class='user_bar'>
+<div class='user_bar span-20 last'>
   <% if logged_in?%>
     <% if current_user.is_admin? %>
       <%=link_to 'Manage Site', :controller => :admin, :action => :index %>

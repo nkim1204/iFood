@@ -4,6 +4,6 @@ class AddServingQty < ActiveRecord::Migration
   end
 
   def self.down
-     remove_column :users, :serving_qty
+     remove_column :recipes, :serving_qty
   end
 end
