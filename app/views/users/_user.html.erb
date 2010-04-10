@@ -17,5 +17,5 @@
 	  <%end%>
 	</td>
 	<td class='last'><%=link_to 'Edit', :action => 'edit', :id => user.id%>
-    <td class='last'><%=link_to_remote 'X', :url =>{:action => 'destroy', :id => user.id}%></td>
+    <td class='last'><%=link_to_remote 'X', :confirm => "Are you sure you want to delete this user?", :url =>{:action => 'destroy', :id => user.id}%></td>
 </tr>
