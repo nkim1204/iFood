@@ -127,4 +127,21 @@ class RecipesController < ApplicationController
     @serving_qty = params[:new_qty][:qty].to_i()
     render :action => 'show'
   end
+  
+  def makeit
+    @recipe = Recipe.find(params[:id])
+    @recipe_ingredients = RecipeIngredient.find(:all, :conditions =>{:recipe_id => @recipe.id})
+    @user_ingredients = UserIngredient.find(:all, :conditions => {:user_id => current_user.id})
+    
+      for u_ing in @user_ingredients
+        for r_ing in @recipe_ingredients
+        if r_ing.ingredient_id== u_ing.ingredient_id and r_ing.unit == u_ing.unit
+          @user_ingredients = UserIngredient.update (u_ing.id, :qty => u_ing.qty - r_ing.qty)
+          
+        end
+      end
+    end
+   flash[:notice] = 'User Ingredient quantities successfully decremented.'
+  end
+  
 end

@@ -5,6 +5,7 @@
     <%if @recipe.approved == false%>
       | &nbsp; <%=link_to 'Approve', :action => 'approve', :id => @recipe.id%>
     <%end%>
+    | &nbsp;  <%=link_to("Back", request.env["HTTP_REFERER"])%>
   <%end%>
 <%end%>
 <%= render :partial => "recipe", :object => @recipe %>
@@ -43,6 +44,12 @@ Rate this recipe
 <%if current_user%>
   <%= form_tag :action => "comment", :id => @recipe %>
      <%= text_area "comment", "body", :rows => 3 %><br />
-     <%= submit_tag "Comment" %>
+     <%= submit_tag "Comment" %> 
   </form>
+<br>
+
+  <%= form_tag :action => "makeit", :id => @recipe %>
+     <%= submit_tag "Let's Make it!" %>
+  </form>
+ 
 <%end%>
