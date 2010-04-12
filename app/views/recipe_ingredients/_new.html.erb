@@ -1,0 +1,18 @@
+<%fields_for 'recipe_ingredient[]' do |t|%>
+    <div id="ing_sel">
+      <% rand = rand(100)%>
+      <script>
+         $(document).ready(function () {
+           $('#ingredients_autocomplete_<%=rand%>').tokenInput("<%= ingredients_autocomplete_path%>", {
+             tokenLimit: 1,
+               hintText: "Type the name of your ingredients",
+               noResultsText: "No results",
+               searchingText: "Searching..."
+             });
+         });
+       </script>    
+      Name: <%=t.text_field :ingredient_id, :id => "ingredients_autocomplete_#{rand}",:class => "autocomplete_multiple"%>
+      Quantity: <%=t.text_field :qty, :size => 10%>
+      Unit: <%=t.text_field :unit, :size => 15%>
+    </div>
+<%end%>

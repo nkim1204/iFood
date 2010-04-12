@@ -87,11 +87,69 @@ class User < ActiveRecord::Base
       #save(false)
     end
 
+    def prepopulate(id)
+      
+      #chicken = 2
+      chicken = UserIngredient.new(:user_id => id, :ingredient_id =>2 , :unit => "kg", :qty => 1 )
+      chicken.save
+
+      #potato = 4
+      potato = UserIngredient.new(:user_id => id, :ingredient_id =>4 , :unit => "kg", :qty => 1 )
+      potato.save
+
+      #onion = 5
+      onion = UserIngredient.new(:user_id => id, :ingredient_id =>5 , :unit => "kg", :qty => 2 )
+      onion.save
+
+      #7 = spinach
+      spinach = UserIngredient.new(:user_id => id, :ingredient_id =>7 , :unit => "g", :qty => 500 )
+      spinach.save
+
+      #garlic = 8
+      garlic = UserIngredient.new(:user_id => id, :ingredient_id =>8 , :unit => "small", :qty => 3 )
+      garlic.save
+
+      #salt = 9
+      salt = UserIngredient.new(:user_id => id, :ingredient_id =>9 , :unit => "kg", :qty => 1 )
+      salt.save
+
+      #pepper = 10
+      pepper = UserIngredient.new(:user_id => id, :ingredient_id =>10 , :unit => "g", :qty => 500 )
+      pepper.save
+
+      #15 = eggs
+      eggs = UserIngredient.new(:user_id => id, :ingredient_id =>15 , :unit => "medium", :qty => 12 )
+      eggs.save
+
+      #17 = apples
+      apples = UserIngredient.new(:user_id => id, :ingredient_id =>17 , :unit => "large", :qty => 10 )
+      apples.save
+
+      #24 = white rice
+      whiterice = UserIngredient.new(:user_id => id, :ingredient_id =>24 , :unit => "kg", :qty => 5 )
+      whiterice.save
+
+      #27 = pasta
+      pasta = UserIngredient.new(:user_id => id, :ingredient_id =>27 , :unit => "kg", :qty => 1 )
+      pasta.save
+
+      #31 = flour
+      flour = UserIngredient.new(:user_id => id, :ingredient_id =>31 , :unit => "kg", :qty => 2 )
+      flour.save
+
+      #34 = white sugar
+      whitesugar = UserIngredient.new(:user_id => id, :ingredient_id =>34 , :unit => "kg", :qty => 1 )
+      whitesugar.save
+
+    end
+
   protected
     
     def make_activation_code
         self.activation_code = self.class.make_token
     end
+
+    
 
 
 end

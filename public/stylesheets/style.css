@@ -1,8 +1,8 @@
 body {
-	background-color: #99cc33;
-	background-image: url('../images/background-gradient.png');
-	background-repeat:repeat-x;
-/*	font-family:Arial, Helvetica, sans-serif;*/
+	background-color: #92b75b;
+/*	background-image: url('../images/background-gradient.png');*/
+/*	background-repeat:repeat-x;*/
+	font-family:Arial, Helvetica, sans-serif;
 	margin:0;
 }
 
@@ -12,54 +12,41 @@ body {
 
 #header {
 	width: 100%;
-	height: 60px;
-	background-color:#B1E25E;
+	height: 50px;
+	background-color:#5e5e5e;
 }
 
 #header a{
-	color:black;
+	color:white;
+	text-decoration:none;
+	font-weight:100;
 }
 
 #header a:hover{
-	color:grey;
-}
-
-#logo_box{
-	width:190;
-	height:60;
-	float:left;
-	margin-bottom:15px;
-	background-color:#B1E25E;
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px;
+	color:#aadb6d;
 }
 
 #logo {
 	display:block;
-	margin:10px;
 	float:left;
-	width:170px;
-	height:45px;
+	width:104px;
+	height:55px;
 	background-image:url('../images/logo.png');
 	background-repeat:no-repeat;
 }
 
 .content{
-	width:960px;
+	width:950px;
 	margin:auto;
+	overflow:hidden;
 }
 
 .header_link{
 	float:left;
 	width:160px;
-	margin:0 30px;
+	margin:16px 0 0 0;
 	text-decoration:none;
-}
-
-.header_link_container{
-	float:left;
-	width:675px;
-	margin-left:40px;
+	text-align:center;
 }
 
 .user_bar{
@@ -67,9 +54,10 @@ body {
 }
 
 #main_content{
+	margin-top:5px;
 	width:940px;
 	min-height:300px;
-	background-color:#BEE281;
+	background-color:#aadb6d;
 	padding:10px;
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px;
@@ -103,6 +91,18 @@ ul.ajax_list{
 
 .user_email_section{
 	width:400px;
+	text-align:left;
+	float:left;
+}
+
+.user_active_section{
+	width:100px;
+	text-align:left;
+	float:left;
+}
+
+.user_category_section{
+	width:50px;
 	text-align:left;
 	float:left;
 }
@@ -211,4 +211,17 @@ li.highlightable a{
 	border:1px dotted grey;
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px;
+}
+
+.awesome{
+display: inline-block;
+padding: 5px 10px 6px;
+color: #fff;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px #999;
+-webkit-box-shadow: 0 1px 3px #999;
+border-bottom: 1px solid #222;
+position: relative;
+cursor: pointer;
 }
