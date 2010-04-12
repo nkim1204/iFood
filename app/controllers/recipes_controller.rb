@@ -136,12 +136,18 @@ class RecipesController < ApplicationController
       for u_ing in @user_ingredients
         for r_ing in @recipe_ingredients
         if r_ing.ingredient_id== u_ing.ingredient_id and r_ing.unit == u_ing.unit
-          @user_ingredients = UserIngredient.update (u_ing.id, :qty => u_ing.qty - r_ing.qty)
+          if (u_ing.qty - r_ing.qty <0) 
+            qty = 0 
+          else 
+            qty = u_ing.qty - r_ing.qty 
+          end
+          @user_ingredients = UserIngredient.update (u_ing.id, :qty =>qty)
           
         end
       end
     end
    flash[:notice] = 'User Ingredient quantities successfully decremented.'
+   redirect_to :action => 'show'
   end
   
 end
