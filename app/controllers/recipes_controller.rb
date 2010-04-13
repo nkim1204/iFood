@@ -8,14 +8,15 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
-    @recipe_instruction = @recipe.recipe_instructions.find_by_recipe_id(params[:id])
-    @recipe_ingredient = @recipe.recipe_ingredients.find_by_recipe_id(params[:id])
+    @recipe_instruction = @recipe.recipe_instructions.find(:all, :conditions => {:recipe_id => params[:id]})
+    @recipe_ingredient = @recipe.recipe_ingredients.find(:all, :conditions => {:recipe_id => params[:id]})
   end
   
   def update
     @recipe = Recipe.find(params[:id])
 
     params[:recipe_ingredient].each { |p| @recipe.recipe_ingredients << RecipeIngredient.new( p ) }
+  	params[:recipe_instruction].each { |p| @recipe.recipe_instructions << RecipeInstruction.new( p ) }
   	
   	if @recipe.update_attributes(params[:recipe])
   	  redirect_to :action => 'show', :id => @recipe.id
@@ -127,4 +128,27 @@ class RecipesController < ApplicationController
     @serving_qty = params[:new_qty][:qty].to_i()
     render :action => 'show'
   end
+  
+  def makeit
+    @recipe = Recipe.find(params[:id])
+    @recipe_ingredients = RecipeIngredient.find(:all, :conditions =>{:recipe_id => @recipe.id})
+    @user_ingredients = UserIngredient.find(:all, :conditions => {:user_id => current_user.id})
+    
+      for u_ing in @user_ingredients
+        for r_ing in @recipe_ingredients
+        if r_ing.ingredient_id== u_ing.ingredient_id and r_ing.unit == u_ing.unit
+          if (u_ing.qty - r_ing.qty <0) 
+            qty = 0 
+          else 
+            qty = u_ing.qty - r_ing.qty 
+          end
+          @user_ingredients = UserIngredient.update (u_ing.id, :qty =>qty)
+          
+        end
+      end
+    end
+   flash[:notice] = 'User Ingredient quantities successfully decremented.'
+   redirect_to :action => 'show'
+  end
+  
 end

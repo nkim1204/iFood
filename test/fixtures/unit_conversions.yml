@@ -1,0 +1,229 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# one:
+#   column: value
+#
+# two:
+#   column: value
+
+one:
+   from: ounces
+   to: lbs
+   ratio: 0.0625
+   category: 1
+
+five:
+   from: whole
+   to: whole
+   ratio: 1
+   category: 4
+
+three:
+   from: cloves
+   to: cloves
+   ratio: 1
+   category: 4
+
+four:
+   from: pinch
+   to: pinch
+   ratio: 1
+   category: 4
+
+six:
+   from: ounces
+   to: g
+   ratio: 28.349523125 
+   category: 1
+
+seven:
+   from: ounces
+   to: kg
+   ratio: 0.028349523125 
+   category: 1
+
+eight:
+   from: lbs
+   to: ounces
+   ratio: 16
+   category: 1
+
+nine:
+   from: lbs
+   to: g
+   ratio: 453.59237 
+   category: 1
+
+ten:
+   from: lbs
+   to: kg
+   ratio: 0.45359237 
+   category: 1
+
+eleven:
+   from: g
+   to: ounces
+   ratio: 0.03527396194958 
+   category: 1
+
+twelve:
+   from: g
+   to: lbs
+   ratio: 0.002204622621849 
+   category: 1
+
+thirteen:
+   from: g
+   to: kg
+   ratio: 0.001 
+   category: 1
+
+fourteen:
+   from: kg
+   to: ounces
+   ratio: 35.27396194958 
+   category: 1
+
+fifteen:
+   from: kg
+   to: lbs
+   ratio: 2.204622621849 
+   category: 1
+
+sixteen:
+   from: kg
+   to: g
+   ratio: 1000
+   category: 1
+
+seventeen:
+   from: tablespoons
+   to: teaspoons
+   ratio: 3
+   category: 2
+
+eighteen:
+   from: tablespoons
+   to: cups
+   ratio: 0.0625
+   category: 2
+
+nineteen:
+   from: tablespoons
+   to: mL
+   ratio: 15
+   category: 2
+
+twenty:
+   from: tablespoons
+   to: L
+   ratio: 0.015
+   category: 2
+
+twentyone:
+   from: teaspoons
+   to: tablespoons
+   ratio: 0.333
+   category: 2
+
+twentytwo:
+   from: teaspoons
+   to: cups
+   ratio: 0.020833
+   category: 2
+
+twentythree:
+   from: teaspoons
+   to: mL
+   ratio: 5
+   category: 2
+
+twentyfour:
+   from: teaspoons
+   to: L
+   ratio: 0.005
+   category: 2
+
+twentyfive:
+   from: cups
+   to: tablespoons
+   ratio: 16
+   category: 2
+
+twentysix:
+   from: cups
+   to: teaspoons
+   ratio: 48
+   category: 2
+
+twentyseven:
+   from: cups
+   to: mL
+   ratio: 250
+   category: 2
+
+twentyeight:
+   from: cups
+   to: L
+   ratio: 0.25
+   category: 2
+
+twentynine:
+   from: mL
+   to: tablespoons
+   ratio: 0.0666
+   category: 2
+
+thirty:
+   from: mL
+   to: teaspoons
+   ratio: 0.2
+   category: 2
+
+thirtyone:
+   from: mL
+   to: cups
+   ratio: 0.004
+   category: 2
+
+thritytwo:
+   from: mL
+   to: L
+   ratio: 0.001
+   category: 2
+
+thritythree:
+   from: L
+   to: tablespoons
+   ratio: 67.2
+   category: 2
+
+thirtyfour:
+   from: L
+   to: teaspoons
+   ratio: 201.6
+   category: 2
+
+thirtyfive:
+   from: L
+   to: cups
+   ratio: 4.2
+   category: 2
+
+thirtysix:
+   from: L
+   to: mL
+   ratio: 1000
+   category: 2
+
+thirtyseven:
+   from: inch
+   to: inch
+   ratio: 1
+   category: 3
+
+thirtyeight:
+   from: breast halves
+   to: breast halves
+   ratio: 1
+   category: 4

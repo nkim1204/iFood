@@ -12,6 +12,7 @@
 <table id="auto_search_results_table">
   <thead>
     <tr>
+		<th></th>
         <th>Recipe Title</th>
         <th>Prep Time</th>
         <th>Matching # Ingredients</th>
@@ -23,6 +24,7 @@
       <% recipe = Recipe.search :with => {:id => result[0]} %>
       <% matches = result[1] %>
       <tr>
+		<td><%= image_tag recipe[0].photo.url(:thumb) %></td>
         <td><%= link_to recipe[0].title, recipe_path(recipe[0].id) %></td>
         <td><%= recipe[0].prep_time.to_i()%></td>
         <td><%= matches%></td>

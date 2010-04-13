@@ -1,7 +1,7 @@
 <table id="searchTable">
   <thead>
     <tr>
-	    <th>&nbsp;&nbsp;&nbsp;</th>
+	    <th></th>
         <th>Recipe Title</th>
         <th>Prep Time</th>
     </tr>
@@ -13,7 +13,7 @@
 		<%= image_tag result.photo.url(:thumb) %>
 		</td>
         <td><%= link_to result.title, recipe_path(result.id) %></td>
-        <td><%= result.prep_time%></td>
+        <td><%= result.prep_time.to_i()%></td>
 	<%if current_user%>
 	   <%if current_user.is_admin%>
 		<td><%= link_to 'Edit', edit_recipe_path(result.id) %></td>

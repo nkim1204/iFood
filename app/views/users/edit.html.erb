@@ -1,11 +1,15 @@
-<h2>Edit Your Profile Information</h2>
+<%if current_user.is_admin?%>
+	<h2>Edit <%=@user.login-%> Profile Information</h2>
+<%else%>
+	<h2>Edit Your Profile Information</h2>
+<%end%>
 <%form_for @user, :url => {:action=>'update', :id=>@user.id} do |f|%>
 <%=f.error_messages%>
   <%=f.label :email%>
   <%=f.text_field :email%>
   
   <%=f.label :password%>
-  <%=link_to 'Change Password', :action => 'change_password'%>
+  <%=link_to 'Change Password', :action => 'change_password', :id => @user.id%>
   <br />
   <%=f.submit%>
 <%end%>

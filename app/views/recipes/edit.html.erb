@@ -25,12 +25,16 @@
   <h4>Ingredients</h4>
   <%= render :partial => 'select_ingredients'%>
   <br />
-<%if false%><!-- Editing instructions is really buggy! -->  
+
   <h4>Instructions</h4>
   <ol id='instructions'>
-  <%= render :partial => 'recipe_instructions/new'%>
+  <%fields_for 'recipe_instruction[]' do |t|%>	
+  	<%for instruction in @recipe.recipe_instructions%>
+  	  <li><%=t.text_area :instruction_text, :rows => 3, :value => instruction.instruction_text%></li>
+  	<%end%>
+  <%end%>
   </ol>
   <%=link_to_remote 'Add Another Instruction', :url => {:action => 'add_instruction'}%>
-<%end%>
+
   <%=f.submit%>
 <%end%>

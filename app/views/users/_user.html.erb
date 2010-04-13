@@ -1,7 +1,21 @@
-<li id=<%=dom_id(user)%> class='highlightable'>
-    <a href='/users/edit/<%=user.id%>' class='highlightable'>
-    <div class='user_id_section'>ID: <%=user.id%></div>
-    <div class='user_username_section'>username: <%=user.login%></div>
-    <div class='user_email_section'>email: <%=user.email%></div>
-    <div class='last'><%=link_to_remote 'X', :url =>{:action => 'destroy', :id => user.id}%></div>
-</li>
+<tr id=<%=dom_id(user)%> class='highlightable'>
+    <td class='user_id_section'><%=user.id%></td>
+    <td class='user_username_section'><%=user.login%></td>
+    <td class='user_email_section'><%=user.email%></td>
+    <td class='user_active_section'>
+	  <%if user.active?%>
+	    Activated
+	  <%else%>
+	    Not Activated
+	  <%end%>
+	</td>
+	<td class='user_category_section'>
+	  <%if user.is_admin?%>
+  	    Admin
+	  <%else%>
+ 	    Regular
+	  <%end%>
+	</td>
+	<td class='last'><%=link_to 'Edit', :action => 'edit', :id => user.id%>
+    <td class='last'><%=link_to_remote 'X', :confirm => "Are you sure you want to delete this user?", :url =>{:action => 'destroy', :id => user.id}%></td>
+</tr>
