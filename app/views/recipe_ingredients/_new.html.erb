@@ -13,6 +13,8 @@
        </script>    
       Name: <%=t.text_field :ingredient_id, :id => "ingredients_autocomplete_#{rand}",:class => "autocomplete_multiple"%>
       Quantity: <%=t.text_field :qty, :size => 10%>
-      Unit: <%=t.text_field :unit, :size => 15%>
+      Unit: <%=t.select(:unit, ['ounces','lbs','kg','g','L','mL','tablespoons','teaspoons','pinch','cloves','cups','inch','whole']) %>
+
     </div>
+
 <%end%>
