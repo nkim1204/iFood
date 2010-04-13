@@ -10,13 +10,13 @@ chicken soup:
     recipe_id: 1
     ingredient_id: 37
     qty: 32.25
-    unit: ounce
+    unit: ounces
 
 cream of mushroom:
     recipe_id: 1
     ingredient_id: 38
     qty: 32.25
-    unit: ounce
+    unit: ounces
 
 water:
     recipe_id: 1
@@ -28,7 +28,7 @@ peas:
     recipe_id: 1
     ingredient_id: 39
     qty: 15
-    unit: ounce
+    unit: ounces
 
 king chicken:
     recipe_id: 1
@@ -112,7 +112,7 @@ italian dressing:
     recipe_id: 4
     ingredient_id: 45
     qty: 16
-    unit: ounce
+    unit: ounces
 
 italian oil:
     recipe_id: 4
@@ -130,7 +130,7 @@ pasta mushroom:
     recipe_id: 5
     ingredient_id: 38 
     qty: 10.75
-    unit: ounce
+    unit: ounces
  
 pasta water:
     recipe_id: 5
@@ -220,7 +220,7 @@ wspinach spinach:
     recipe_id: 8
     ingredient_id: 7 
     qty: 4
-    unit: ounce
+    unit: ounces
 
 wspinach pine nuts:
     recipe_id: 8
@@ -274,7 +274,7 @@ gsmoothie yogurt:
     recipe_id: 10
     ingredient_id: 56  
     qty: 6
-    unit: ounce
+    unit: ounces
 
 gsmoothie apple:
     recipe_id: 10
