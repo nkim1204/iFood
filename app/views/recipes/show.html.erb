@@ -40,7 +40,7 @@ Rate this recipe
    <ul id='items_list' class='ajax_list'>
      <%=render :partial => 'recipe_comment', :collection => @recipe_comments%>
    </ul>
-
+<br />
 <%if current_user%>
   <%= form_tag :action => "comment", :id => @recipe %>
      <%= text_area "comment", "body", :rows => 3 %><br />
