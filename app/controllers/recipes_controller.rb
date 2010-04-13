@@ -8,14 +8,15 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
-    @recipe_instruction = @recipe.recipe_instructions.find_by_recipe_id(params[:id])
-    @recipe_ingredient = @recipe.recipe_ingredients.find_by_recipe_id(params[:id])
+    @recipe_instruction = @recipe.recipe_instructions.find(:all, :conditions => {:recipe_id => params[:id]})
+    @recipe_ingredient = @recipe.recipe_ingredients.find(:all, :conditions => {:recipe_id => params[:id]})
   end
   
   def update
     @recipe = Recipe.find(params[:id])
 
     params[:recipe_ingredient].each { |p| @recipe.recipe_ingredients << RecipeIngredient.new( p ) }
+  	params[:recipe_instruction].each { |p| @recipe.recipe_instructions << RecipeInstruction.new( p ) }
   	
   	if @recipe.update_attributes(params[:recipe])
   	  redirect_to :action => 'show', :id => @recipe.id
