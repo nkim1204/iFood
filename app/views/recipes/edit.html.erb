@@ -6,35 +6,42 @@
 <h2>Update A Recipe</h2>
 
 <%form_for @recipe, :action => 'update', :html => { :multipart => true } do |f|%>
-  <%=f.error_messages%>
-  <%=f.label :title%>
-  <%=f.text_field :title%>
-  
-  <%=f.label :overview, 'Description'%>
-  <%=f.text_area :overview, :rows => 5%>
-  
-  <%=f.label :prep_time%>
-  <%=f.text_field :prep_time, :size => 10%> &nbsp; Minutes
+   <%=f.error_messages%>
+   <%=hidden_field_tag 'recipe[approved]', 'false' %>
+   <table>
+   <tr><td><%=f.label :title%></td>
+   <td><%=f.text_field :title%></td></tr>
 
-  <%=f.label :serving_qty, 'Serves'%>
-  <%=f.text_field :serving_qty, :size => 3%> &nbsp; People
+   <tr><td><%=f.label :overview, 'Description'%></td>
+   <td><%=f.text_area :overview, :style => 'height:60px'%></td></tr>
 
-  <%= render :partial => 'form', :locals => { :f => f } %>
+   <tr><td><%=f.label :prep_time%></td><td>
+   <%=f.text_field :prep_time, :size => 10%> &nbsp; Minutes</td>
+ </tr>
+   <tr><td><%=f.label :serving_qty, 'Serves'%></td>
+   <td><%=f.text_field :serving_qty, :size => 3%> &nbsp; People</td></tr>
 
-  <br />
-  <h4>Ingredients</h4>
-  <%= render :partial => 'select_ingredients'%>
-  <br />
+   <%= render :partial => 'form', :locals => { :f => f } %>
 
-  <h4>Instructions</h4>
-  <ol id='instructions'>
-  <%fields_for 'recipe_instruction[]' do |t|%>	
-  	<%for instruction in @recipe.recipe_instructions%>
-  	  <li><%=t.text_area :instruction_text, :rows => 3, :value => instruction.instruction_text%></li>
-  	<%end%>
-  <%end%>
-  </ol>
-  <%=link_to_remote 'Add Another Instruction', :url => {:action => 'add_instruction'}%>
-
+   <tr>
+   <td><%=f.label :ingredients%></td>
+   </tr>
+   </table>
+   <div id='ingredients'>
+     <%for recipe_ingredient in @recipe.recipe_ingredients%>
+      <%= render :partial => 'recipe_ingredients/edit', :locals => {:recipe_ingredient => recipe_ingredient}%>
+     <%end%>
+   </div>
+   <%=link_to_remote 'Add Another Ingredient', :url => {:action => 'add_ingredient'}%>
+   <br /><br />
+   <%=f.label :instructions%>
+   <ol id='instructions'>
+     <%for recipe_instruction in @recipe.recipe_instructions%>
+       <%= render :partial => 'recipe_instructions/edit', :locals => {:recipe_instruction => recipe_instruction}%>
+     <%end%>
+   </ol>
+   <!-- </ol> -->
+   <%=link_to_remote 'Add Another Instruction', :url => {:action => 'add_instruction'}%>
+   <br />
   <%=f.submit%>
 <%end%>

@@ -1,0 +1,25 @@
+<%fields_for "recipe_ingredients_update[#{recipe_ingredient.id}]" do |t|%>
+      <% rand = rand(100)%>
+      <script>
+         $(document).ready(function () {
+           $('#ingredients_autocomplete_<%=rand%>').tokenInput("<%= ingredients_autocomplete_path%>", {
+              tokenLimit: 1,
+               prePopulate: [{'name':'<%=recipe_ingredient.ingredient.name%>', 'id':'<%= recipe_ingredient.ingredient_id %>'}],
+               hintText: "Type the name of your ingredients",
+               noResultsText: "No results",
+               searchingText: "Searching..."
+             });
+         });
+       </script>
+    <div id="ing_sel" class='box'>
+      <div class='span-12'>  
+      Name: <%=t.text_field :ingredient_id, :id => "ingredients_autocomplete_#{rand}",:class => "autocomplete_multiple"%>
+    </div>
+    <div class='span-4'>
+      Quantity: <br /> <%=t.text_field :qty, :size => 10, :value => recipe_ingredient.qty%>
+      </div>
+    <div class='span-4'>
+      Unit: <%=t.select(:unit, ['ounces','lbs','kg','g','L','mL','tablespoons','teaspoons','pinch','cloves','cups','inch','whole'], :value => recipe_ingredient.unit) %>
+      </div>
+    </div>
+<%end%>

@@ -1,0 +1,6 @@
+<%fields_for "recipe_instructions_update[#{recipe_instruction.id}]" do |t|%>
+
+<li>
+    <%=t.text_area :instruction_text, :size => '600x3', :style=>'width:600px; height:60px', :value => recipe_instruction.instruction_text%>
+</li>
+<%end%>
