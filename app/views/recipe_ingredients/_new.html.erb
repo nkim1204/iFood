@@ -1,5 +1,4 @@
 <%fields_for 'recipe_ingredient[]' do |t|%>
-    <div id="ing_sel">
       <% rand = rand(100)%>
       <script>
          $(document).ready(function () {
@@ -10,11 +9,16 @@
                searchingText: "Searching..."
              });
          });
-       </script>    
+       </script>
+    <div id="ing_sel" class='box'>
+      <div class='span-12'>  
       Name: <%=t.text_field :ingredient_id, :id => "ingredients_autocomplete_#{rand}",:class => "autocomplete_multiple"%>
-      Quantity: <%=t.text_field :qty, :size => 10%>
-      Unit: <%=t.select(:unit, ['ounces','lbs','kg','g','L','mL','tablespoons','teaspoons','pinch','cloves','cups','inch','whole']) %>
-
     </div>
-
+    <div class='span-4'>
+      Quantity: <br /> <%=t.text_field :qty, :size => 10%>
+      </div>
+    <div class='span-4'>
+      Unit: <%=t.select(:unit, ['ounces','lbs','kg','g','L','mL','tablespoons','teaspoons','pinch','cloves','cups','inch','whole']) %>
+      </div>
+    </div>
 <%end%>

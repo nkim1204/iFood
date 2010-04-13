@@ -63,6 +63,13 @@ body {
 	-webkit-border-radius: 5px;
 }
 
+.box{
+	background-color:#92b75b;
+	overflow:hidden;
+	padding:10px;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+}
 /*SECTIONS FOR LIST*/
 ul.ajax_list{
 	list-style-type: none;
