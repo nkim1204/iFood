@@ -9,14 +9,14 @@
 chicken soup:
     recipe_id: 1
     ingredient_id: 37
-    qty: 3
-    unit: 10.75 ounce can
+    qty: 32.25
+    unit: ounce
 
 cream of mushroom:
     recipe_id: 1
     ingredient_id: 38
-    qty: 3
-    unit: 10.75 ounce can
+    qty: 32.25
+    unit: ounce
 
 water:
     recipe_id: 1
@@ -27,14 +27,14 @@ water:
 peas:
     recipe_id: 1
     ingredient_id: 39
-    qty: 1
-    unit: 15 ounce can
+    qty: 15
+    unit: ounce
 
 king chicken:
     recipe_id: 1
     ingredient_id: 2
     qty: 1
-    unit: pound
+    unit: lbs
 
 easy chicken:
     recipe_id: 2
@@ -46,7 +46,7 @@ dressing:
     recipe_id: 2
     ingredient_id: 40
     qty: 1
-    unit: cup
+    unit: cups
 
 cornflakes:
     recipe_id: 2
@@ -76,13 +76,13 @@ crema broth:
     recipe_id: 3
     ingredient_id: 42 
     qty: 1
-    unit: cup
+    unit: cups
 
 crema cream:
     recipe_id: 3
     ingredient_id: 43 
     qty: 1
-    unit: cup
+    unit: cups
 
 crema ketchup:
     recipe_id: 3 
@@ -100,7 +100,7 @@ crema rice:
     recipe_id: 3
     ingredient_id: 24 
     qty: 1
-    unit: cup
+    unit: cups
 
 italian chicken:
     recipe_id: 4
@@ -111,14 +111,14 @@ italian chicken:
 italian dressing:
     recipe_id: 4
     ingredient_id: 45
-    qty: 1
-    unit: 16 ounce bottle
+    qty: 16
+    unit: ounce
 
 italian oil:
     recipe_id: 4
     ingredient_id: 28 
     qty: 0.33
-    unit: cup
+    unit: cups
  
 pasta chicken:
     recipe_id: 5
@@ -129,8 +129,8 @@ pasta chicken:
 pasta mushroom:
     recipe_id: 5
     ingredient_id: 38 
-    qty: 1
-    unit: 10.75 ounce can
+    qty: 10.75
+    unit: ounce
  
 pasta water:
     recipe_id: 5
@@ -148,13 +148,13 @@ psalad pasta:
     recipe_id: 6
     ingredient_id: 27 
     qty: 1
-    unit: pound
+    unit: lbs
 
 psalad broccoli:
     recipe_id: 6
     ingredient_id: 6
     qty: 1
-    unit: head
+    unit: whole
 
 psalad red pepper:
     recipe_id: 6
@@ -166,13 +166,13 @@ psalad cheese:
     recipe_id: 6
     ingredient_id: 16 
     qty: 0.25
-    unit: cup
+    unit: cups
 
 ps pasta:
     recipe_id: 7
     ingredient_id: 27 
     qty: 1
-    unit: pound
+    unit: lbs
 
 ps avacado:
     recipe_id: 7
@@ -190,13 +190,13 @@ ps dressing:
     recipe_id: 7
     ingredient_id: 45 
     qty: 0.5
-    unit: cup
+    unit: cups
 
 wspinach oil:
     recipe_id: 8
     ingredient_id: 28 
     qty: 0.25
-    unit: cup
+    unit: cups
 
 wspinach vinegar:
     recipe_id: 8
@@ -208,19 +208,19 @@ wspinach lemon:
     recipe_id: 8
     ingredient_id: 51  
     qty: 1
-    unit: teaspoon
+    unit: teaspoons
 
 wspinach garlic:
     recipe_id: 8
     ingredient_id: 8 
     qty: 1
-    unit: tablespoon
+    unit: tablespoons
 
 wspinach spinach:
     recipe_id: 8
     ingredient_id: 7 
     qty: 4
-    unit: ounces
+    unit: ounce
 
 wspinach pine nuts:
     recipe_id: 8
@@ -268,13 +268,13 @@ gsmoothie grapes:
     recipe_id: 10
     ingredient_id: 55  
     qty: 1
-    unit: cup
+    unit: cups
 
 gsmoothie yogurt:
     recipe_id: 10
     ingredient_id: 56  
-    qty: 1
-    unit: 6 ounce tub
+    qty: 6
+    unit: ounce
 
 gsmoothie apple:
     recipe_id: 10

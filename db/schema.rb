@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100409005527) do
+ActiveRecord::Schema.define(:version => 20100413071722) do
 
   create_table "ingredient_categories", :force => true do |t|
     t.string   "name"
@@ -74,6 +74,13 @@ ActiveRecord::Schema.define(:version => 20100409005527) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.boolean  "delta",              :default => true, :null => false
+  end
+
+  create_table "unit_conversions", :force => true do |t|
+    t.string  "from"
+    t.string  "to"
+    t.float   "ratio"
+    t.integer "category"
   end
 
   create_table "user_ingredients", :force => true do |t|
