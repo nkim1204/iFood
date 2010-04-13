@@ -17,7 +17,8 @@ ActionController::Routing::Routes.draw do |map|
   map.list_users 'users/list', :controller => 'users', :action => 'list'
   map.delete_user 'users/destroy/:id', :controller => 'users', :action => 'destroy'
   map.delete_recipe 'recipes/destroy/:id', :controller => 'recipes', :action => 'destroy'
-
+  map.destroy_grocery_ingredient 'grocery_ingredients/destroy/:id', :controller => 'grocery_ingredients', :action => 'destroy'
+   map.grocery_to_user_ingredient 'grocery_ingredients/grocery_to_user/:id', :controller => 'grocery_ingredients', :action => 'grocery_to_user'
   map.edit_recipe 'recipes/edit/:id', :controller => 'recipes', :action => 'edit'
   map.forgot    '/forgot',                    :controller => 'users',     :action => 'forgot'
   map.reset     'reset/:reset_code',          :controller => 'users',     :action => 'reset'
@@ -29,7 +30,7 @@ map.ingredients_autocomplete 'ingredients/select_for_recipe', :controller => 'in
   map.resources :ingredient_categories
   map.resources :ingredients
   map.resources :recipes
-
+  map.resources :grocery_ingredients
   map.resource :session
 
   # The priority is based upon order of creation: first created -> highest priority.

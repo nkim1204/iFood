@@ -106,6 +106,27 @@ class RecipesController < ApplicationController
 	redirect_to :action => 'show', :id => params[:id]
   end
   
+  def add_to_grocery_list
+  item_ids = Array.new
+   params[:grocery].each_pair{|k, v| item_ids << k if  v == "1" }
+    
+    item_ids.each do |item|
+      puts "#{item} is to be added to the grocery list"
+      @grocery_ingredient = GroceryIngredient.new()
+      @grocery_ingredient.user_id = current_user.id
+      @grocery_ingredient.ingredient_id = item.to_i
+      rec_ing = RecipeIngredient.find(:first, :conditions => ["recipe_id = #{params[:id]} AND ingredient_id = #{item}"])
+      @grocery_ingredient.qty = rec_ing.qty
+      @grocery_ingredient.unit = rec_ing.unit
+      if @grocery_ingredient.save
+        flash[:notice] = "Items were successfully added to your grocery list"
+      else 
+        flash[:warning] = "Items were not added to your grocery list - something went wrong.  We are currently trying to fix this problem.  Sorry for any inconvenience"
+      end 
+    end
+    redirect_to :action => 'show', :id => params[:id] 
+  end
+  
   def comment
     @recipe_comments = RecipeComment.new(:recipe_id => params[:id], :user_id => current_user.id, :comment => params[:comment][:body])
     if @recipe_comments.save

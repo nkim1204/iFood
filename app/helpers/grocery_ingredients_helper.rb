@@ -1,0 +1,2 @@
+module GroceryIngredientsHelper
+end

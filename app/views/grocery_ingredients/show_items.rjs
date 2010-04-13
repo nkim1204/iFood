@@ -1,0 +1,1 @@
+page[dom_id(@ingredient_category)].replace_html :partial => 'items'
