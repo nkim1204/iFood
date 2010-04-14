@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class GroceryIngredientTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  
+  def test_validates_numericality_of_qty
+    gi = GroceryIngredient.new
+    assert !gi.save
   end
 end

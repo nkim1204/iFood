@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class IngredientCategoryTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  
+  def test_validates_presence_of_name
+    ic = IngredientCategory.new
+    assert !ic.save
   end
+  
 end
