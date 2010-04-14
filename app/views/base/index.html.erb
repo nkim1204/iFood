@@ -2,10 +2,17 @@
 
 <div id="table">
   <% if logged_in?%>
-    Today's recommended menus for you!<br>
-    This recipe list is automatically generated in order of best matching number of ingredients.<br><br>
-    <%= render :partial => "auto_search_results" %>
+    <%if @auto_results.empty?%>
+      You do not have anything ingredients in your kitchen! <br>
+      Go to <%=link_to 'Your Kitchen', {:controller => 'user_ingredients', :action => 'index'}%> to add ingredients!<br>
+
+    <%else%>
+      Today's recommended menus for you!<br>
+      This recipe list is automatically generated in order of best matching number of ingredients.<br><br>
+      <%= render :partial => "auto_search_results" %>
+    <%end%>
+    
   <% else %>
-	<center><img src="images/ifood.jpg" /></center>
+    <center><img src="images/ifood.jpg" /></center>
   <% end %>
 </div>

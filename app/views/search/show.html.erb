@@ -1,33 +1,35 @@
 
 <% content_for :head do %>
-  <%= javascript_include_tag 'jquery.tablesorter' %>  
-  
+  <%= javascript_include_tag 'jquery.tablesorter' %>
+
   <script>
-  $(document).ready(function() {
-    $("#searchTable").tablesorter();
-  });
+    $(document).ready(function() {
+      $("#searchTable").tablesorter();
+    });
   </script>
 <% end %>
 
 
 
 <% form_for :search, {:controller => 'search', :action => 'show'} do |f|%>
-<select name="search[type]">
-<option value="title">Title Search</option>
-<option value="ingredient">Ingredient Search</option>
-</select>
-<%= f.text_field :query %>
-<%= submit_tag "Search!" %>
+  <select name="search[type]">
+    <option value="title">Title Search</option>
+    <option value="ingredient">Ingredient Search</option>
+  </select>
+  <%= f.text_field :query %>
+  <%= submit_tag "Search!" %>
 <% end %>
 
 
-<%if @searchfor && @results.empty?%> 
-</br>
-  <b>Your Search For '<%=@searchfor%>' Returned 0 Results</b>
-  <%else%>
-<div id="table">
+<%if @results.empty?%>
+  <%if @searchfor%>
+    </br>
+    <b>Your Search For '<%=@searchfor%>' Returned 0 Results</b>
+  <%end%>
+<%else%>
+  <div id="table">
     <%= render :partial => "search_table" %>
-</div>
-       
+  </div>
+
 
 <%end%>
