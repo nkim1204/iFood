@@ -5,6 +5,6 @@ class RecipeIngredient < ActiveRecord::Base
   define_index do
     indexes unit
     has recipe_id, ingredient_id
-    set_property :delta => false
+    set_property :delta => true
   end
 end
