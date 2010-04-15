@@ -1,8 +1,14 @@
 require 'test_helper'
 
 class RecipeTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  
+  def test_validates_presence_of_title
+    recipe = Recipe.new
+    assert !recipe.save
+  end
+
+  def test_validates_numericality_of_prep_time
+    recipe = Recipe.new
+    assert !recipe.save
   end
 end

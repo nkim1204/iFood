@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class IngredientTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  
+  def test_validates_presence_of_name
+    ingredient = Ingredient.new
+    assert !ingredient.save
   end
 end
