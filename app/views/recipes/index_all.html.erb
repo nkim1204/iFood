@@ -1,0 +1,30 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'jquery.tablesorter' %>
+
+  <script>
+    $(document).ready(function() {
+      $("#recipe_index_table").tablesorter();
+    });
+  </script>
+<% end %>
+
+<% @recipes.inspect %>
+
+<table id="recipe_index_table">
+  <thead>
+    <tr>
+      <th><a href="">Recipe Title</a></th>
+      <th><a href="">Prep Time (min)</a></th>
+    </tr>
+  </thead>  
+
+  <tbody>
+    <% for r in Recipe.all(:order => 'title') %>
+      <tr>
+        <td><%= link_to r.title, recipe_path(r.id) %></td>
+        <td><%= r.prep_time.to_i()%></td>
+      </tr>
+
+    <%end%>
+  </tbody>
+</table>
