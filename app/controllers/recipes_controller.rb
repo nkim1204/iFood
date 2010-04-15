@@ -89,12 +89,6 @@ class RecipesController < ApplicationController
 
   end
 
-#  def ind
-#    flash[:notice] = "ind is being called"
-#    @recipe = Recipe.all()
-#    return render :text => "@recipe: #{@recipe}"
-#   end 
-#
   def index_all
   end
 
