@@ -1,12 +1,12 @@
 
 
-<div id="recently_viewed" >
 <% if @viewed && @viewed.size > 0%>
+<div id="recently_viewed" >
 <h4>Recently Viewed Recipes</h4>
   <ul>
     <% for r in @viewed %>
         <li><%= link_to r.title, recipe_path(r.id) %></li>
     <%end%>
   </ul>
-<%end%>
 </div>
+<%end%>

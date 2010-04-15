@@ -13,7 +13,7 @@
 <h4>Average Rating</h4>
 <div>
 <% if @recipe_avg_rating == 0 %>
-<p>No ratings for this recipe. Be the first to rate it!</p>
+<p>No ratings for this recipe. Please login to rate it.<% if current_user %>Be the first to rate it!<%end%></p>
 <%end%>
 <%@recipe_avg_rating.times{  %>
 <img src="/images/rating_star.png"></img>
