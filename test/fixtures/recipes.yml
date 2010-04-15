@@ -45,7 +45,7 @@ Italian Marinated Chicken:
 
 Easy Pasta Chicken:
     id: 5
-    user_id: 1
+    user_id: 1    
     approved: true
     overview: This is a quick, easy chicken pasta. 
     prep_time: 15 

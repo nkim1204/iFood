@@ -8,7 +8,7 @@
       .tablesorter({
         //By default, sort list by descending order of matching ingredients.
         //[3=column, 1 = descending order]
-        sortList: [[3,1]]        
+        sortList: [[3,1], [4,1]]
       });
     });
   </script>
@@ -22,6 +22,8 @@
       <th><a href="">Recipe Title</a></th>
       <th><a href="">Prep Time (min)</a></th>
       <th><a href="">Matching # Ingredients</a></th>
+      <th><a href="">Rating</a></th>
+      <th></th>
     </tr>
   </thead>  
 
@@ -29,11 +31,25 @@
     <% for result in @auto_results %>
       <% recipe = Recipe.find(result[0]) %>
       <% matches = result[1] %>
+      <% rating_results = RecipeRating.find(:all, :conditions => ["recipe_id = ?", recipe.id]) %>
+      <% rating = "N/A" %>
+      <% if !rating_results.empty? %>
+        <% rating = rating_results[0].rating %>
+      <%end%>
       <tr>
         <td><%= image_tag recipe.photo.url(:thumb) %></td>
         <td><%= link_to recipe.title, recipe_path(recipe.id) %></td>
         <td><%= recipe.prep_time.to_i()%></td>
         <td><%= matches%></td>
+        <td><%= rating %></td>
+        <td>
+          <%if rating.instance_of? Fixnum %>
+            <%rating.times{  %>
+            <img src="/images/rating_star.png"></img>
+            <%} %>
+          <%end%>
+          
+        </td>
       </tr>
 
     <%end%>

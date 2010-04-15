@@ -4,16 +4,33 @@
       <th></th>
       <th><a href="">Recipe Title</a></th>
       <th><a href="">Prep Time (min)</a></th>
+      <th><a href="">Rating</a></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% for result in @results %>
+      <% rating_results = RecipeRating.find(:all, :conditions => ["recipe_id = ?", result.id]) %>
+      <% rating = "N/A" %>
+      <% if !rating_results.empty? %>
+        <% rating = rating_results[0].rating %>
+      <%end%>
+    
       <tr>
         <td>
           <%= image_tag result.photo.url(:thumb) %>
         </td>
         <td><%= link_to result.title, recipe_path(result.id) %></td>
         <td><%= result.prep_time.to_i()%></td>
+        <td><%= rating %></td>
+        <td>
+          <%if rating.instance_of? Fixnum %>
+            <%rating.times{  %>
+              <img src="/images/rating_star.png"></img>
+            <%} %>
+          <%end%>
+        </td>
+
         <%if current_user%>
           <%if current_user.is_admin%>
             <td><%= link_to 'Edit', edit_recipe_path(result.id) %></td>
