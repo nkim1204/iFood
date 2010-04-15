@@ -63,6 +63,24 @@ body {
 	-webkit-border-radius: 5px;
 }
 
+div#main_content div#recently_viewed {
+    padding-top: 10px;
+    margin-top: 25px;
+    border-top: 1px solid #92B75B;
+}
+
+div#main_content div#recently_viewed ul {
+    list-style-type: none; 
+    margin-left:0px; 
+    padding-left: 0px; 
+    font-size: 90%;
+}    
+
+div#main_content div#recently_viewed ul li{
+    float: left; 
+    margin-right: 15px;
+}
+
 .box{
 	background-color:#92b75b;
 	overflow:hidden;

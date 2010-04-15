@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_filter :login_required, :except => [:show]
+  before_filter :login_required, :except => [:show, :index_all]
   def new
     @recipe = Recipe.new
     @recipe_instruction = @recipe.recipe_instructions.new()
@@ -75,6 +75,27 @@ class RecipesController < ApplicationController
     if @serving_qty.nil?
       @serving_qty = @recipe.serving_qty
     end
+    rid = params[:id].to_i
+    if session[:recentlyViewed].kind_of? Array
+        # if the array has this rid already, remove it so this is more recent
+        if session[:recentlyViewed].include?( rid )
+           session[:recentlyViewed].delete( rid )  
+        end
+        session[:recentlyViewed] << rid
+    else
+        session[:recentlyViewed] = Array.new()
+        session[:recentlyViewed] << rid
+    end 
+
+  end
+
+#  def ind
+#    flash[:notice] = "ind is being called"
+#    @recipe = Recipe.all()
+#    return render :text => "@recipe: #{@recipe}"
+#   end 
+#
+  def index_all
   end
 
   def avg_rating

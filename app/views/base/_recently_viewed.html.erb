@@ -1,11 +1,11 @@
 
 
-<div id="recently_viewed" style="margin-top: 15px; clear:all;">
+<div id="recently_viewed" >
 <% if @viewed && @viewed.size > 0%>
 <h4>Recently Viewed Recipes</h4>
-  <ul style="list-style-type: none; margin-left:0px; padding-left: 0px; font-size: 90%;">
+  <ul>
     <% for r in @viewed %>
-        <li style="float: left; margin-right: 15px;"><%= link_to r.title, recipe_path(r.id) %></li>
+        <li><%= link_to r.title, recipe_path(r.id) %></li>
     <%end%>
   </ul>
 <%end%>

@@ -37,7 +37,7 @@
     <div class='header_link_container'>
     <%=link_to 'About', {:controller => 'base', :action => 'about'}, :class => 'header_link span-4'%>
     <%=link_to 'Contribute', {:controller => 'recipes', :action => 'new'}, :class => 'header_link span-4'%>
-    <%=link_to 'Recipes', {:controller => 'recipes', :action => 'index'}, :class => 'header_link span-4'%>
+    <%=link_to 'Recipes', {:controller => 'recipes', :action => 'index_all'}, :class => 'header_link span-4'%>
     <%=link_to 'Search', {:controller => 'search', :action => 'show'}, :class => 'header_link span-4'%>
     
     </div>
@@ -47,5 +47,6 @@
 <%= render :partial=> 'base/flash_error' unless flash[:error].blank?%>
 <%= render :partial=> 'base/flash_notice' unless flash[:notice].blank?%>
   <%=yield%>
+<%= render :partial => 'base/recently_viewed'%>
 </div>
 </body>

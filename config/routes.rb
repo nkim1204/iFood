@@ -22,6 +22,8 @@ ActionController::Routing::Routes.draw do |map|
   map.edit_recipe 'recipes/edit/:id', :controller => 'recipes', :action => 'edit'
   map.forgot    '/forgot',                    :controller => 'users',     :action => 'forgot'
   map.reset     'reset/:reset_code',          :controller => 'users',     :action => 'reset'
+#   map.recipe_index 'recipes/ind', :controller => 'recipes', :action => 'ind'
+  map.recipe_index 'recipes/index_all', :controller => 'recipes', :action => 'index_all'
 
 
 map.ingredients_autocomplete 'ingredients/select_for_recipe', :controller => 'ingredients', :action => 'select_for_recipe'
