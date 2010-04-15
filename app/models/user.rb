@@ -90,15 +90,15 @@ class User < ActiveRecord::Base
     def prepopulate(id)
       
       #chicken = 2
-      chicken = UserIngredient.new(:user_id => id, :ingredient_id =>2 , :unit => "kg", :qty => 1 )
+      chicken = UserIngredient.new(:user_id => id, :ingredient_id =>2 , :unit => "lbs", :qty => 10 )
       chicken.save
 
       #potato = 4
-      potato = UserIngredient.new(:user_id => id, :ingredient_id =>4 , :unit => "kg", :qty => 1 )
+      potato = UserIngredient.new(:user_id => id, :ingredient_id =>4 , :unit => "lbs", :qty => 10 )
       potato.save
 
       #onion = 5
-      onion = UserIngredient.new(:user_id => id, :ingredient_id =>5 , :unit => "kg", :qty => 2 )
+      onion = UserIngredient.new(:user_id => id, :ingredient_id =>5 , :unit => "whole", :qty => 10 )
       onion.save
 
       #7 = spinach
@@ -106,39 +106,39 @@ class User < ActiveRecord::Base
       spinach.save
 
       #garlic = 8
-      garlic = UserIngredient.new(:user_id => id, :ingredient_id =>8 , :unit => "small", :qty => 3 )
+      garlic = UserIngredient.new(:user_id => id, :ingredient_id =>8 , :unit => "cloves", :qty => 30 )
       garlic.save
 
       #salt = 9
-      salt = UserIngredient.new(:user_id => id, :ingredient_id =>9 , :unit => "kg", :qty => 1 )
+      salt = UserIngredient.new(:user_id => id, :ingredient_id =>9 , :unit => "g", :qty => 100 )
       salt.save
 
       #pepper = 10
-      pepper = UserIngredient.new(:user_id => id, :ingredient_id =>10 , :unit => "g", :qty => 500 )
+      pepper = UserIngredient.new(:user_id => id, :ingredient_id =>10 , :unit => "g", :qty => 100 )
       pepper.save
 
       #15 = eggs
-      eggs = UserIngredient.new(:user_id => id, :ingredient_id =>15 , :unit => "medium", :qty => 12 )
+      eggs = UserIngredient.new(:user_id => id, :ingredient_id =>15 , :unit => "whole", :qty => 10 )
       eggs.save
 
       #17 = apples
-      apples = UserIngredient.new(:user_id => id, :ingredient_id =>17 , :unit => "large", :qty => 10 )
+      apples = UserIngredient.new(:user_id => id, :ingredient_id =>17 , :unit => "whole", :qty => 10 )
       apples.save
 
       #24 = white rice
-      whiterice = UserIngredient.new(:user_id => id, :ingredient_id =>24 , :unit => "kg", :qty => 5 )
+      whiterice = UserIngredient.new(:user_id => id, :ingredient_id =>24 , :unit => "cups", :qty => 100 )
       whiterice.save
 
       #27 = pasta
-      pasta = UserIngredient.new(:user_id => id, :ingredient_id =>27 , :unit => "kg", :qty => 1 )
+      pasta = UserIngredient.new(:user_id => id, :ingredient_id =>27 , :unit => "cups", :qty => 30 )
       pasta.save
 
       #31 = flour
-      flour = UserIngredient.new(:user_id => id, :ingredient_id =>31 , :unit => "kg", :qty => 2 )
+      flour = UserIngredient.new(:user_id => id, :ingredient_id =>31 , :unit => "cups", :qty => 50 )
       flour.save
 
       #34 = white sugar
-      whitesugar = UserIngredient.new(:user_id => id, :ingredient_id =>34 , :unit => "kg", :qty => 1 )
+      whitesugar = UserIngredient.new(:user_id => id, :ingredient_id =>34 , :unit => "cups", :qty => 50 )
       whitesugar.save
 
     end
