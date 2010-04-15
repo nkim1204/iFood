@@ -1,9 +1,11 @@
 <% content_for :head do %>
   <%= javascript_include_tag 'jquery.tablesorter' %>
+  <%= javascript_include_tag 'jquery.tablesorter.pager' %>
 
   <script>
     $(document).ready(function() {
-      $("#auto_search_results_table").tablesorter({
+      $("#auto_search_results_table")
+      .tablesorter({
         //By default, sort list by descending order of matching ingredients.
         //[3=column, 1 = descending order]
         sortList: [[3,1]]        
@@ -25,12 +27,12 @@
 
   <tbody>
     <% for result in @auto_results %>
-      <% recipe = Recipe.search :with => {:id => result[0]} %>
+      <% recipe = Recipe.find(result[0]) %>
       <% matches = result[1] %>
       <tr>
-        <td><%= image_tag recipe[0].photo.url(:thumb) %></td>
-        <td><%= link_to recipe[0].title, recipe_path(recipe[0].id) %></td>
-        <td><%= recipe[0].prep_time.to_i()%></td>
+        <td><%= image_tag recipe.photo.url(:thumb) %></td>
+        <td><%= link_to recipe.title, recipe_path(recipe.id) %></td>
+        <td><%= recipe.prep_time.to_i()%></td>
         <td><%= matches%></td>
       </tr>
 

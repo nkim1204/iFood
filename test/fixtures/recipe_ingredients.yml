@@ -40,7 +40,7 @@ easy chicken:
     recipe_id: 2
     ingredient_id: 2
     qty: 4
-    unit: breast halves
+    unit: lbs
 
 dressing:
     recipe_id: 2
@@ -58,47 +58,47 @@ crema chicken:
     recipe_id: 3
     ingredient_id: 2
     qty: 4
-    unit: breast halves
+    unit: lbs
 
 crema butter:
-    recipe_id: 3 
+    recipe_id: 3
     ingredient_id: 13
     qty: 2
     unit: tablespoons
 
 crema flour:
-    recipe_id: 3 
+    recipe_id: 3
     ingredient_id: 31
     qty: 2
     unit: tablespoons
 
 crema broth:
     recipe_id: 3
-    ingredient_id: 42 
+    ingredient_id: 42
     qty: 1
     unit: cups
 
 crema cream:
     recipe_id: 3
-    ingredient_id: 43 
+    ingredient_id: 43
     qty: 1
     unit: cups
 
 crema ketchup:
-    recipe_id: 3 
+    recipe_id: 3
     ingredient_id: 21
     qty: 2
     unit: tablespoons
 
 crema tortillas:
     recipe_id: 3
-    ingredient_id: 44 
+    ingredient_id: 44
     qty: 6
     unit: 6 inch
 
 crema rice:
     recipe_id: 3
-    ingredient_id: 24 
+    ingredient_id: 24
     qty: 1
     unit: cups
 
@@ -106,7 +106,7 @@ italian chicken:
     recipe_id: 4
     ingredient_id: 2
     qty: 4
-    unit: breast halves
+    unit: lbs
 
 italian dressing:
     recipe_id: 4
@@ -122,31 +122,31 @@ italian oil:
  
 pasta chicken:
     recipe_id: 5
-    ingredient_id: 2 
+    ingredient_id: 2
     qty: 4
-    unit: breast halves
+    unit: lbs
  
 pasta mushroom:
     recipe_id: 5
-    ingredient_id: 38 
+    ingredient_id: 38
     qty: 10.75
     unit: ounces
  
 pasta water:
     recipe_id: 5
-    ingredient_id: 30  
+    ingredient_id: 30
     qty: 2.25
     unit: cups
  
 pasta:
     recipe_id: 5
-    ingredient_id: 27 
+    ingredient_id: 27
     qty: 2
     unit: cups
 
 psalad pasta:
     recipe_id: 6
-    ingredient_id: 27 
+    ingredient_id: 27
     qty: 1
     unit: lbs
 
@@ -158,19 +158,19 @@ psalad broccoli:
 
 psalad red pepper:
     recipe_id: 6
-    ingredient_id: 46 
+    ingredient_id: 46
     qty: 1
     unit: whole
 
 psalad cheese:
     recipe_id: 6
-    ingredient_id: 16 
+    ingredient_id: 16
     qty: 0.25
     unit: cups
 
 ps pasta:
     recipe_id: 7
-    ingredient_id: 27 
+    ingredient_id: 27
     qty: 1
     unit: lbs
 
@@ -188,103 +188,103 @@ ps tomato:
 
 ps dressing:
     recipe_id: 7
-    ingredient_id: 45 
+    ingredient_id: 45
     qty: 0.5
     unit: cups
 
 wspinach oil:
     recipe_id: 8
-    ingredient_id: 28 
+    ingredient_id: 28
     qty: 0.25
     unit: cups
 
 wspinach vinegar:
     recipe_id: 8
-    ingredient_id: 23  
+    ingredient_id: 23
     qty: 2
     unit: tablespoons
 
 wspinach lemon:
     recipe_id: 8
-    ingredient_id: 51  
+    ingredient_id: 51
     qty: 1
     unit: teaspoons
 
 wspinach garlic:
     recipe_id: 8
-    ingredient_id: 8 
+    ingredient_id: 8
     qty: 1
     unit: tablespoons
 
 wspinach spinach:
     recipe_id: 8
-    ingredient_id: 7 
+    ingredient_id: 7
     qty: 4
     unit: ounces
 
 wspinach pine nuts:
     recipe_id: 8
-    ingredient_id: 48  
+    ingredient_id: 48
     qty: 1.5
     unit: tablespoons
 
 smoothie spinach:
     recipe_id: 9
-    ingredient_id: 7  
+    ingredient_id: 7
     qty: 2
     unit: cups
 
 smoothie strawberries:
     recipe_id: 9
-    ingredient_id: 52   
+    ingredient_id: 52
     qty: 2
     unit: cups
 
 smoothie banana:
     recipe_id: 9
-    ingredient_id: 18  
+    ingredient_id: 18
     qty: 1
     unit: whole
 
 smoothie honey:
     recipe_id: 9
-    ingredient_id: 53   
+    ingredient_id: 53
     qty: 2
     unit: tablespoons
 
 smoothie ice:
     recipe_id: 9
-    ingredient_id: 54  
+    ingredient_id: 54
     qty: 0.5
     unit: cups
 
 gsmoothie banana:
     recipe_id: 10
-    ingredient_id: 18  
+    ingredient_id: 18
     qty: 1
     unit: whole
 
 gsmoothie grapes:
     recipe_id: 10
-    ingredient_id: 55  
+    ingredient_id: 55
     qty: 1
     unit: cups
 
 gsmoothie yogurt:
     recipe_id: 10
-    ingredient_id: 56  
+    ingredient_id: 56
     qty: 6
     unit: ounces
 
 gsmoothie apple:
     recipe_id: 10
-    ingredient_id: 17  
+    ingredient_id: 17
     qty: 1
     unit: whole
 
 gsmoothie spinach:
     recipe_id: 10
-    ingredient_id: 7   
+    ingredient_id: 7
     qty: 1.5
     unit: cups
 

@@ -11,7 +11,7 @@ class BaseController < ApplicationController
 
       #Search the user_ingredients table and get the corresponding ingredients associated with the current user
       #This will return an array, with each element being a row in the UserIngredient table
-      user_ingredients = UserIngredient.search :with => {:user_id =>  cur_uid}
+      user_ingredients = UserIngredient.find(:all, :conditions => ["user_id = ?", cur_uid])      
 
       #Loop through the array.  For each iteration:
       #1.  Grab the ingredient ID in the row
@@ -25,7 +25,7 @@ class BaseController < ApplicationController
         current_ingredient = user_ingredient_row.ingredient_id
 
         #Search the recipe_ingredient table for recipes having the current_ingredient
-        recipe_ingredient_rows = RecipeIngredient.search :with => {:ingredient_id => current_ingredient}
+        recipe_ingredient_rows = RecipeIngredient.find(:all, :conditions => ["ingredient_id = ?", current_ingredient])
 
         #loop through recipe_ingredient_rows, and store recipes in our auto_results hash (Key = recipe_id, Value = # matching ingredients)
         for recipe_ingredient_row in recipe_ingredient_rows
