@@ -6,7 +6,7 @@
     <div class='section'><%=grocery_ingredient.unit%></div>
 
 
-	<div class-'last'><%=link_to_remote 'Add', :url => grocery_to_user_ingredient_path(grocery_ingredient.id)%></div>
+	<div class='second_to_last'><%=link_to_remote 'Add', :url => grocery_to_user_ingredient_path(grocery_ingredient.id)%></div>
     <div class='last'><%=link_to_remote 'X', :url =>destroy_grocery_ingredient_path(grocery_ingredient.id)%></div>
   </li>
 </a>
