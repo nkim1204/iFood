@@ -39,6 +39,7 @@
     <%=link_to 'Contribute', {:controller => 'recipes', :action => 'new'}, :class => 'header_link span-4'%>
     <%=link_to 'Recipes', {:controller => 'recipes', :action => 'index_all'}, :class => 'header_link span-4'%>
     <%=link_to 'Search', {:controller => 'search', :action => 'show'}, :class => 'header_link span-4'%>
+    <%if current_user%><%=link_to 'Grocery List', {:controller => 'grocery_ingredients', :action => ''}, :class => 'header_link span-4'%><%end%>
     
     </div>
   </div>
