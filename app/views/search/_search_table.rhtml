@@ -13,7 +13,13 @@
       <% rating_results = RecipeRating.find(:all, :conditions => ["recipe_id = ?", result.id]) %>
       <% rating = "N/A" %>
       <% if !rating_results.empty? %>
-        <% rating = rating_results[0].rating %>
+        <% rating_sum = 0%>
+        <%for rat in rating_results%>
+            <%rating_sum = rating_sum + rat.rating%>
+        <%end%>
+
+        <%rating = 0%>
+        <%rating = rating_sum / rating_results.size%>
       <%end%>
     
       <tr>
