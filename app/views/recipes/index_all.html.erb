@@ -11,21 +11,25 @@
 <table id="recipe_index_table">
   <thead>
     <tr>
+	  <th></th>
       <th><a href="">Recipe Title</a></th>
       <th><a href="">Prep Time (min)</a></th>
       <th><a href="">Rating</a></th>
       <th></th>
+	  <th></th>
     </tr>
   </thead>  
 
   <tbody>
     <% for r in Recipe.all(:order => 'title') %>
+	  <%if r.approved%>
       <% rating_results = RecipeRating.find(:all, :conditions => ["recipe_id = ?", r.id]) %>
       <% rating = "N/A" %>
       <% if !rating_results.empty? %>
         <% rating = rating_results[0].rating %>
       <%end%>
       <tr>
+	  <td><%= image_tag r.photo.url(:thumb) %></td>
       <td><%= link_to r.title, recipe_path(r.id) %></td>
       <td><%= r.prep_time.to_i()%></td>
       <td><%= rating %></td>
@@ -36,7 +40,13 @@
           <%} %>
         <%end%>
       </td>
+	  <%if current_user%>
+		<%if current_user.is_admin%>
+			<td><%= link_to "Edit", :controller => 'recipes', :action => 'edit', :id => r.id%></td>
+		<%end%>
+	  <%end%>
     </tr>
+	<%end%>
     <%end%>
 
   </tbody>
