@@ -1,7 +1,9 @@
   <li id=<%=dom_id(recipe_comment)%> class='comment'>
+  <%if current_user %>
     <%if current_user.is_admin or current_user.id == recipe_comment.user.id%>
     	<div class='first'><%=link_to_remote 'X', :url =>{:action => 'destroy_comment', :id => recipe_comment.id}%></div>
     <%end%>
     <div class='commenter'><%=recipe_comment.user.login%></div>
     <div class='comment_desc'><%=recipe_comment.comment%></div>
+  <%end%>
   </li>
