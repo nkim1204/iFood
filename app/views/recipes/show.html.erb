@@ -10,7 +10,7 @@
 <%end%>
 <%= render :partial => "recipe", :object => @recipe %>
 
-<h4>Average Rating</h4>
+<h4><b>Average Rating</b></h4>
 <div>
 <% if @recipe_avg_rating == 0 %>
 <p>No ratings for this recipe.<%if !current_user %> Please login to rate it.<%end%><% if current_user %> Be the first to rate it!<%end%></p>
@@ -22,7 +22,7 @@
 
 <%if current_user %>
 <h4>
-Rate this recipe
+<b>Rate this recipe</b>
 </h4>
 <%= form_tag :action => "rate", :id => @recipe.id %>
 <select name="rate[rating]">
@@ -35,8 +35,8 @@ Rate this recipe
 <%= submit_tag "Rate!" %>
 </form>
 <%end%>
-
-<h4>Comments</h4>
+<br/>
+<h4><b>Comments</b></h4>
    <ul id='items_list' class='ajax_list'>
      <%=render :partial => 'recipe_comment', :collection => @recipe_comments%>
    </ul>

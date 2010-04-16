@@ -1,24 +1,25 @@
-<h3><%=@recipe.title%></h3>
+<h3><b><%=@recipe.title%></b></h3>
 
 <% if @recipe.photo.exists? then %>
 <%= image_tag @recipe.photo.url(:medium) %>
 <%end%>
 <br />
-Description:
+<b>Description:</b>
 <%=@recipe.overview%>
 <br />
-Prep Time:
+<b>Prep Time:</b>
 <%=@recipe.prep_time%> &nbsp; Minutes
 <br />
 
 <%= form_tag :action => "adjust_ingredient_amt", :id => @recipe.id%>
-Yield:
+<b>Yield:</b>
 <%= text_field :new_qty, :qty, :size => 3, :value=>@serving_qty %>  Serving(s) 
 <%= submit_tag "Adjust Quantity"%>
 </form>
 
 <% if current_user %>
-<h4>Ingredients</h4>
+<br/>
+<h4><b>Ingredients</b></h4>
 <%= form_tag :action => "add_to_grocery_list", :id => @recipe.id %>
 <table RULES=ROWS>
 <tr>
@@ -54,7 +55,7 @@ Yield:
 </tr>
 </table>
 <%end%>
-<h4>Instructions</h4>
+<h4><b>Instructions</b></h4>
 <ol>
   <%for instruction in @recipe.recipe_instructions%>
     <li>
