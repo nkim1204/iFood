@@ -8,8 +8,6 @@
   </script>
 <% end %>
 
-<% @recipes.inspect %>
-
 <table id="recipe_index_table">
   <thead>
     <tr>
@@ -20,11 +18,24 @@
 
   <tbody>
     <% for r in Recipe.all(:order => 'title') %>
+      <% rating_results = RecipeRating.find(:all, :conditions => ["recipe_id = ?", r.id]) %>
+      <% rating = "N/A" %>
+      <% if !rating_results.empty? %>
+        <% rating = rating_results[0].rating %>
+      <%end%>
       <tr>
-        <td><%= link_to r.title, recipe_path(r.id) %></td>
-        <td><%= r.prep_time.to_i()%></td>
-      </tr>
-
+      <td><%= link_to r.title, recipe_path(r.id) %></td>
+      <td><%= r.prep_time.to_i()%></td>
+      <td><%= rating %></td>
+      <td>
+        <%if rating.instance_of? Fixnum %>
+          <%rating.times{  %>
+            <img src="/images/rating_star.png"></img>
+          <%} %>
+        <%end%>
+      </td>
+    </tr>
     <%end%>
+
   </tbody>
 </table>
